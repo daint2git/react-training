@@ -1,0 +1,14 @@
+@import 'utils/colors.scss';
+@import 'utils/variables.scss';
+
+.root {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 5em;
+
+  .spacer {
+    padding: 3em;
+  }
+}

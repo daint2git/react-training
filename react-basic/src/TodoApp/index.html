@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo App</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <style type="text/css">
+    body {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      font-size: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+      outline: none;
+      border: none;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .container {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 500px;
+      height: auto;
+      overflow-y: auto;
+      border: 1px solid #95A5A6;
+      box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    .item {
+      height: 50px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+    .add-item {
+      width: 100%;
+      border-bottom: 1px solid #95A5A6;
+      font-size: 20px;
+    }
+
+    ::placeholder {
+      font-size: 20px;
+      color: #BDC3C7;
+    }
+
+    .show-item {
+      border-bottom: 1px solid #BDC3C7;
+    }
+
+    .isCompleted {
+      text-decoration: line-through;
+    }
+
+    .control {
+      height: 40px;
+      padding: 5px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+    }
+
+    input[type='checkbox'] {
+      position: relative;
+      margin-right: 20px;
+      padding-right: 20px;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid #F39C12;
+      box-sizing: border-box;
+    }
+
+    input[type='checkbox']::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      top: 0;
+      left: 1px;
+      margin: 4px;
+      border-radius: 50%;
+      background-color: #FFF;
+      transition: background-color 250ms linear;
+    }
+
+    input[type='checkbox']:checked::after {
+      background-color: #F39C12;
+    }
+
+    span {
+      padding-right: 100px;
+    }
+
+    button {
+      margin-right: 5px;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid transparent;
+      box-sizing: border-box;
+    }
+
+    button:focus:not(:active) {
+      border: 1px solid #F39C12;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

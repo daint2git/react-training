@@ -1,0 +1,94 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import 'utils/_reset.scss';
+@import 'utils/colors.scss';
+@import 'utils/variables.scss';
+
+:global {
+  html {
+    width: 100%;
+    font-size: $fs_html_base;
+  }
+
+  body {
+    width: 100%;
+    font-size: $fs_medium;
+    font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+    background-color: transparent;
+  }
+
+  /*
+  button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  img {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: 100%;
+  }
+
+  input[type='button'],
+  input[type='checkbox'],
+  input[type='radio'],
+  input[type='file'] {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    outline: none;
+    border: none;
+  }
+  */
+
+  * {
+    box-sizing: border-box;
+  }
+
+  #root {
+    width: 100%;
+  }
+
+  ::placeholder {
+    color: $fu_c_silver;
+  }
+
+  ::-webkit-scrollbar {
+    appearance: none;
+    width: 7px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
+}

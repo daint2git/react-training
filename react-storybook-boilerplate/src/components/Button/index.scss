@@ -1,0 +1,11 @@
+.button {
+  font-size: 13px;
+  color: white;
+  background-color: #3498db;
+  transition: all 200ms linear;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #e74c3c;
+  }
+}

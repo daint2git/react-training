@@ -1,0 +1,39 @@
+@import "../utils/colors.scss";
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 250ms linear;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  height: 40px;
+  min-width: 100px;
+  padding: 10px;
+
+  &[data-type="primary"] {
+    background-color: $primary;
+  }
+
+  &[data-type="primary"]:hover {
+    background-color: $primary_hover;
+  }
+
+  &[data-type="secondary"] {
+    background-color: $secondary;
+  }
+
+  &[data-type="secondary"]:hover {
+    background-color: $secondary_hover;
+  }
+
+  &[data-type="danger"] {
+    background-color: $danger;
+  }
+
+  &[data-type="danger"]:hover {
+    background-color: $danger_hover;
+  }
+}
