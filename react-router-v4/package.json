@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-template",
+  "name": "react-router-v4",
   "version": "1.0.0",
-  "description": "react webpack template",
+  "description": "React Router V4",
   "main": "index.js",
   "author": "daint2",
   "license": "ISC",
@@ -18,8 +18,8 @@
     "@babel/runtime": "^7.1.5",
     "common-tags": "^1.8.0",
     "prop-types": "^15.6.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react": "^16.8.4",
+    "react-dom": "npm:@hot-loader/react-dom",
     "react-hot-loader": "^4.8.0",
     "react-router-dom": "^4.3.1"
   },
