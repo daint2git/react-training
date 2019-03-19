@@ -1,0 +1,26 @@
+{
+  "name": "reactstrap-storybook",
+  "version": "1.0.0",
+  "description": "reactstrap storybook",
+  "main": "index.js",
+  "author": "daint2@fsoft.com.vn",
+  "license": "ISC",
+  "scripts": {
+    "storybook": "start-storybook -p 6167 --quiet"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@storybook/react": "^5.0.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "style-loader": "^0.23.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "reactstrap": "^7.1.0"
+  }
+}
