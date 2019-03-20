@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import StateHook from './StateHook'
-import EffectHook from './EffectHook'
+import React from 'react'
+import CallbackHook from './CallbackHook'
 import ContextHook from './ContextHook'
+import EffectHook from './EffectHook'
+import MemoHook from './MemoHook'
+import RefHook from './RefHook'
+import StateHook from './StateHook'
 
-class Hooks extends Component {
-  render() {
-    return (
-      <>
-        <StateHook />
-        <EffectHook />
-        <ContextHook />
-      </>
-    )
-  }
-}
-
-export default Hooks
+export default () => (
+  <>
+    <CallbackHook />
+    <ContextHook />
+    <EffectHook />
+    <MemoHook />
+    <RefHook />
+    <StateHook />
+  </>
+)

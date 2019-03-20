@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Example1 from './PureComponent/Example1'
+import Hooks from './Hooks'
 
 const Root = () => (
   <>
-    <Example1 />
+    <Hooks />
   </>
 )
 
