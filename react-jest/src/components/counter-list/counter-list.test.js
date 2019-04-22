@@ -1,5 +1,5 @@
 import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { shallow, mount, render } from 'enzyme'
 import renderer from 'react-test-renderer'
 import CounterList from './counter-list'
 
@@ -9,7 +9,22 @@ describe('CounterList', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  test('shallow vs mount', () => {
+  test('render correctly (shallow)', () => {
+    const tree = shallow(<CounterList />)
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('render correctly (mount)', () => {
+    const tree = mount(<CounterList />)
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('render correctly (render)', () => {
+    const tree = render(<CounterList />)
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('debug shallow vs mount', () => {
     const shallowWrapper = shallow(<CounterList />)
     const mountWrapper = mount(<CounterList />)
 
@@ -29,5 +44,20 @@ describe('CounterList', () => {
     addBtn.simulate('click')
     const counters = wrapper.find('Counter')
     expect(counters.length).toEqual(3)
+  })
+
+  test('initialNumberCounters props is 10', () => {
+    const wrapper = shallow(<CounterList initialNumberCounters={10} />)
+    expect(wrapper.instance().props).toEqual({ initialNumberCounters: 10 })
+  })
+
+  test('initialNumberCounters props is 10 (2)', () => {
+    const wrapper = shallow(<CounterList initialNumberCounters={10} />)
+    expect(wrapper.instance().props.initialNumberCounters).toEqual(10)
+  })
+
+  test('numberCounters state is 10 when initialNumberCounters props is 10', () => {
+    const wrapper = shallow(<CounterList initialNumberCounters={10} />)
+    expect(wrapper.state().numberCounters).toEqual(10)
   })
 })

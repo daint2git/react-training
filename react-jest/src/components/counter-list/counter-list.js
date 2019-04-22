@@ -6,7 +6,7 @@ import Counter from '../counter'
 const createRange = num => Array.from(Array(num).keys())
 
 class CounterList extends React.Component {
-  state = { numberCounters: 2 }
+  state = { numberCounters: this.props.initialNumberCounters }
 
   addCounter = () =>
     this.setState(prevState => ({
@@ -28,6 +28,10 @@ class CounterList extends React.Component {
       </>
     )
   }
+}
+
+CounterList.defaultProps = {
+  initialNumberCounters: 2,
 }
 
 export default CounterList

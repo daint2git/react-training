@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CounterWithHooks matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="counter"
+  >
+    <p>
+      Current count: 0
+    </p>
+    <button
+      name="increment"
+    >
+      increment
+    </button>
+    <button
+      name="decrement"
+    >
+      decrement
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CounterWithHooks matches the snapshot when click increment button 1`] = `
+<DocumentFragment>
+  <div
+    class="counter"
+  >
+    <p>
+      Current count: 1
+    </p>
+    <button
+      name="increment"
+    >
+      increment
+    </button>
+    <button
+      name="decrement"
+    >
+      decrement
+    </button>
+  </div>
+</DocumentFragment>
+`;
