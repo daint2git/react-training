@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup using mount 1`] = `
+<styled.div>
+  <div
+    className="sc-bwzfXH jIEWCi"
+  >
+    <styled.button
+      className="class"
+      type="button"
+    >
+      <button
+        className="class sc-bdVaJa ihDGdR"
+        type="button"
+      >
+        <strong>
+          Hello!
+        </strong>
+      </button>
+    </styled.button>
+    <styled.button
+      className="class1"
+      type="button"
+    >
+      <button
+        className="class1 sc-bdVaJa ihDGdR"
+        type="button"
+      >
+        <strong>
+          Hello2!
+        </strong>
+      </button>
+    </styled.button>
+  </div>
+</styled.div>
+`;
+
+exports[`ButtonGroup using react-test-renderer 1`] = `
+<div
+  className="sc-bwzfXH jIEWCi"
+>
+  <button
+    className="class sc-bdVaJa ihDGdR"
+    type="button"
+  >
+    <strong>
+      Hello!
+    </strong>
+  </button>
+  <button
+    className="class1 sc-bdVaJa ihDGdR"
+    type="button"
+  >
+    <strong>
+      Hello2!
+    </strong>
+  </button>
+</div>
+`;
+
+exports[`ButtonGroup using render 1`] = `
+<div
+  class="sc-bwzfXH jIEWCi"
+>
+  <button
+    class="class sc-bdVaJa ihDGdR"
+    type="button"
+  >
+    <strong>
+      Hello!
+    </strong>
+  </button>
+  <button
+    class="class1 sc-bdVaJa ihDGdR"
+    type="button"
+  >
+    <strong>
+      Hello2!
+    </strong>
+  </button>
+</div>
+`;
+
+exports[`ButtonGroup using shallow 1`] = `
+<styled.div>
+  <Button
+    className="class"
+  >
+    <strong>
+      Hello!
+    </strong>
+  </Button>
+  <Button
+    className="class1"
+  >
+    <strong>
+      Hello2!
+    </strong>
+  </Button>
+</styled.div>
+`;
