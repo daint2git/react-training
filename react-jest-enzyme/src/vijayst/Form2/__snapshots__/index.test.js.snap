@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form2 Snapshot 1. renderer 1`] = `
+<form
+  className="sc-bdVaJa ksQzqc"
+>
+  <input
+    className="sc-bwzfXH gmViiu"
+    name="email"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    className="sc-htpNat keqZrr"
+    onClick={[Function]}
+  >
+    Add
+  </button>
+</form>
+`;
+
+exports[`Form2 Snapshot 2. shallow 1`] = `
+<styled.form>
+  <styled.input
+    name="email"
+    onChange={[Function]}
+    type="text"
+  />
+  <styled.button
+    onClick={[Function]}
+  >
+    Add
+  </styled.button>
+</styled.form>
+`;
+
+exports[`Form2 Snapshot 3. mount 1`] = `
+<styled.form>
+  <form
+    className="sc-bdVaJa ksQzqc"
+  >
+    <styled.input
+      name="email"
+      onChange={[Function]}
+      type="text"
+    >
+      <input
+        className="sc-bwzfXH gmViiu"
+        name="email"
+        onChange={[Function]}
+        type="text"
+      />
+    </styled.input>
+    <styled.button
+      onClick={[Function]}
+    >
+      <button
+        className="sc-htpNat keqZrr"
+        onClick={[Function]}
+      >
+        Add
+      </button>
+    </styled.button>
+  </form>
+</styled.form>
+`;
+
+exports[`Form2 Snapshot 4. render 1`] = `
+<form
+  class="sc-bdVaJa ksQzqc"
+>
+  <input
+    class="sc-bwzfXH gmViiu"
+    name="email"
+    type="text"
+  />
+  <button
+    class="sc-htpNat keqZrr"
+  >
+    Add
+  </button>
+</form>
+`;

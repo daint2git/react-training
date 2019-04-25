@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormAndList Snapshot 1. renderer 1`] = `
+<div>
+  <form
+    className="sc-bdVaJa ksQzqc"
+  >
+    <input
+      className="sc-bwzfXH gmViiu"
+      name="email"
+      onChange={[Function]}
+      type="text"
+    />
+    <button
+      className="sc-htpNat keqZrr"
+      onClick={[Function]}
+    >
+      Add
+    </button>
+  </form>
+  <table
+    className="myClass"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`FormAndList Snapshot 2. shallow 1`] = `
+<div>
+  <Form2
+    onAdd={[Function]}
+  />
+  <List
+    data={Array []}
+  />
+</div>
+`;
+
+exports[`FormAndList Snapshot 3. mount 1`] = `
+<div>
+  <styled.form>
+    <form
+      className="sc-bdVaJa ksQzqc"
+    >
+      <styled.input
+        name="email"
+        onChange={[Function]}
+        type="text"
+      >
+        <input
+          className="sc-bwzfXH gmViiu"
+          name="email"
+          onChange={[Function]}
+          type="text"
+        />
+      </styled.input>
+      <styled.button
+        onClick={[Function]}
+      >
+        <button
+          className="sc-htpNat keqZrr"
+          onClick={[Function]}
+        >
+          Add
+        </button>
+      </styled.button>
+    </form>
+  </styled.form>
+  <table
+    className="myClass"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`FormAndList Snapshot 4. render 1`] = `
+<div>
+  <form
+    class="sc-bdVaJa ksQzqc"
+  >
+    <input
+      class="sc-bwzfXH gmViiu"
+      name="email"
+      type="text"
+    />
+    <button
+      class="sc-htpNat keqZrr"
+    >
+      Add
+    </button>
+  </form>
+  <table
+    class="myClass"
+  >
+    <thead>
+      <tr>
+        <th>
+          Email
+        </th>
+      </tr>
+    </thead>
+    <tbody />
+  </table>
+</div>
+`;
+
+exports[`FormAndList structure and behavior onAdd updates List 1`] = `
+<div>
+  <Form2
+    onAdd={[Function]}
+  />
+  <List
+    data={Array []}
+  />
+</div>
+`;
+
+exports[`FormAndList structure and behavior onAdd updates List 2`] = `
+<div>
+  <Form2
+    onAdd={[Function]}
+  />
+  <List
+    data={
+      Array [
+        "Email 1",
+      ]
+    }
+  />
+</div>
+`;

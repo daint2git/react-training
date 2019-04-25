@@ -7,27 +7,31 @@ exports[`ButtonGroup using mount 1`] = `
   >
     <styled.button
       className="class"
+      onClick={[Function]}
       type="button"
     >
       <button
         className="class sc-bdVaJa ihDGdR"
+        onClick={[Function]}
         type="button"
       >
         <strong>
-          Hello!
+          1
         </strong>
       </button>
     </styled.button>
     <styled.button
-      className="class1"
+      className="class"
+      onClick={[Function]}
       type="button"
     >
       <button
-        className="class1 sc-bdVaJa ihDGdR"
+        className="class sc-bdVaJa ihDGdR"
+        onClick={[Function]}
         type="button"
       >
         <strong>
-          Hello2!
+          2
         </strong>
       </button>
     </styled.button>
@@ -41,18 +45,20 @@ exports[`ButtonGroup using react-test-renderer 1`] = `
 >
   <button
     className="class sc-bdVaJa ihDGdR"
+    onClick={[Function]}
     type="button"
   >
     <strong>
-      Hello!
+      1
     </strong>
   </button>
   <button
-    className="class1 sc-bdVaJa ihDGdR"
+    className="class sc-bdVaJa ihDGdR"
+    onClick={[Function]}
     type="button"
   >
     <strong>
-      Hello2!
+      2
     </strong>
   </button>
 </div>
@@ -67,15 +73,15 @@ exports[`ButtonGroup using render 1`] = `
     type="button"
   >
     <strong>
-      Hello!
+      1
     </strong>
   </button>
   <button
-    class="class1 sc-bdVaJa ihDGdR"
+    class="class sc-bdVaJa ihDGdR"
     type="button"
   >
     <strong>
-      Hello2!
+      2
     </strong>
   </button>
 </div>
@@ -85,16 +91,20 @@ exports[`ButtonGroup using shallow 1`] = `
 <styled.div>
   <Button
     className="class"
+    key="1"
+    onClick={[Function]}
   >
     <strong>
-      Hello!
+      1
     </strong>
   </Button>
   <Button
-    className="class1"
+    className="class"
+    key="2"
+    onClick={[Function]}
   >
     <strong>
-      Hello2!
+      2
     </strong>
   </Button>
 </styled.div>

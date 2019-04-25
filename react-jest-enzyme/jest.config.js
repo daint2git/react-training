@@ -3,24 +3,22 @@ const baseConfig = {
   setupFilesAfterEnv: ['<rootDir>/scripts/tests/setupAfterEnv.js'],
 
   moduleFileExtensions: ['js', 'json'],
-  modulePathIgnorePatterns: [],
   // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
   // testMatch: ['**/src/basic/**/?(*.)+(spec|test).js?(x)'],
   // testMatch: ['**/src/components/**/?(*.)+(spec|test).js?(x)'],
-  testMatch: ['<rootDir>/src/components/counter-list/*.test.js'],
+  testMatch: ['<rootDir>/src/vijayst/**/*.test.js'],
   // testMatch: [
   //   '**/src/components/**/__tests__/**/*.js?(x)',
   //   '**/src/components/**/?(*.)+(spec|test).js?(x)',
   // ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 
-  // Automatically clear mock calls and instances between every test
-  clearMocks: true,
   timers: 'fake',
   verbose: true,
 }
 
 const coverageConfig = {
+  collectCoverage: true,
   collectCoverageFrom: [
     'src/components/**/*.js',
     '!src/components/**/__tests__/**/*.js',
@@ -33,10 +31,10 @@ const coverageConfig = {
   coverageReporters: ['text', 'lcov'],
   coverageThreshold: {
     global: {
-      statements: 90,
-      branches: 90,
-      functions: 90,
-      lines: 90,
+      statements: 100,
+      branches: 100,
+      functions: 100,
+      lines: 100,
     },
   },
 }

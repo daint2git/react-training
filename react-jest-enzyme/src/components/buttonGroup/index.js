@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Button from '@components/button'
 
@@ -6,15 +7,18 @@ const Wrapper = styled.div`
   display: flex;
 `
 
-const ButtonGroup = () => (
+const ButtonGroup = ({ list, onClick }) => (
   <Wrapper>
-    <Button className="class">
-      <strong>Hello!</strong>
-    </Button>
-    <Button className="class1">
-      <strong>Hello2!</strong>
-    </Button>
+    {list.map(child => (
+      <Button key={child} className="class" onClick={() => onClick(child)}>
+        <strong>{child}</strong>
+      </Button>
+    ))}
   </Wrapper>
 )
+
+ButtonGroup.propTypes = {
+  list: PropTypes.array,
+}
 
 export default ButtonGroup

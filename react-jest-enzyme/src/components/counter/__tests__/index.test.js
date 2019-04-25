@@ -36,4 +36,9 @@ describe('Counter', () => {
     const text = wrapper.find('.counter p').text()
     expect(text).toEqual('Current count: -1')
   })
+  test('spyOn', () => {
+    const wrapper = shallow(<Counter props={{ prop1: 'a', props2: 2 }} otherProps={12} />)
+    console.log('wapper', wrapper.instance().props) // { props: { prop1: 'a', props2: 2 }, otherProps: 12 }
+    console.log('wapper', wrapper.state()) // { count: 0 }
+  })
 })

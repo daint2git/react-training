@@ -8,9 +8,10 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "test": "cross-env NODE_ENV=test jest",
-    "test:watch": "cross-env NODE_ENV=test jest --watch",
-    "test:watchAll": "cross-env NODE_ENV=test jest --watchAll",
-    "test:coverage": "rimraf ./coverage && cross-env NODE_ENV=test JEST_ENV=coverage jest --coverage",
+    "test:watch": "yarn test --watch",
+    "test:watchAll": "yarn test --watchAll",
+    "test:clean": "rimraf ./coverage",
+    "test:coverage": "yarn test:clean && cross-env NODE_ENV=test JEST_ENV=coverage jest",
     "test:storybook": "start-storybook -p 1234 --quiet"
   },
   "devDependencies": {

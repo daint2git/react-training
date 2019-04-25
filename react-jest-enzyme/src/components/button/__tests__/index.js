@@ -19,6 +19,7 @@ describe('Button', () => {
     )
 
     expect(mounted).toMatchSnapshot()
+    mounted.unmount()
   })
 
   test('converts basic button using render', () => {
