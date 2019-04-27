@@ -16,7 +16,7 @@
     "precommit": "lint-staged && yarn test"
   },
   "lint-staged": {
-    "*.js": [
+    "src/**/*.js": [
       "prettier --print-width 100 --semi false --single-quote --trailing-comma all --write",
       "git add"
     ]
