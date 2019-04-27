@@ -1,12 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button converts basic button using mount 1`] = `
+.c0 {
+  color: white;
+  background-color: black;
+}
+
 <styled.button
   className="class"
   type="button"
 >
   <button
-    className="class sc-bdVaJa ihDGdR"
+    className="class c0"
     type="button"
   >
     <strong>
@@ -17,8 +22,13 @@ exports[`Button converts basic button using mount 1`] = `
 `;
 
 exports[`Button converts basic button using react-test-renderer 1`] = `
+.c0 {
+  color: white;
+  background-color: black;
+}
+
 <button
-  className="class sc-bdVaJa ihDGdR"
+  className="class c0"
   type="button"
 >
   <strong>
@@ -28,8 +38,13 @@ exports[`Button converts basic button using react-test-renderer 1`] = `
 `;
 
 exports[`Button converts basic button using render 1`] = `
+.c0 {
+  color: white;
+  background-color: black;
+}
+
 <button
-  class="class sc-bdVaJa ihDGdR"
+  class="class c0"
   type="button"
 >
   <strong>

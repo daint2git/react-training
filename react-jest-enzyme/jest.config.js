@@ -1,20 +1,28 @@
 const baseConfig = {
-  setupFiles: ['<rootDir>/scripts/tests/setup.js'],
-  setupFilesAfterEnv: ['<rootDir>/scripts/tests/setupAfterEnv.js'],
+  verbose: true,
+  timers: 'fake',
+  setupFiles: ['<rootDir>/scripts/test/env-setup.js'],
+  setupFilesAfterEnv: ['<rootDir>/scripts/test/test-setup.js'],
 
   moduleFileExtensions: ['js', 'json'],
+  moduleDirectories: ['node_modules', 'src'],
+  moduleNameMapper: {
+    '\\.(css|less|styl|scss|sass)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/scripts/test/mocks/fileMock.js',
+  },
   // testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
   // testMatch: ['**/src/basic/**/?(*.)+(spec|test).js?(x)'],
   // testMatch: ['**/src/components/**/?(*.)+(spec|test).js?(x)'],
-  testMatch: ['<rootDir>/src/vijayst/**/*.test.js'],
+  testMatch: ['<rootDir>/src/components/CssModulesAndFileMockExample/**/*.test.js'],
   // testMatch: [
   //   '**/src/components/**/__tests__/**/*.js?(x)',
   //   '**/src/components/**/?(*.)+(spec|test).js?(x)',
   // ],
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 
-  timers: 'fake',
-  verbose: true,
+  watchPlugins: ['jest-watch-typeahead/filename', 'jest-watch-typeahead/testname'],
+  watchPathIgnorePatterns: ['<rootDir>/node_modules/'],
 }
 
 const coverageConfig = {

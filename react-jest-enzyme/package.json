@@ -1,37 +1,51 @@
 {
-  "name": "react-jest",
+  "name": "react-jest-enzyme",
   "version": "1.0.0",
-  "description": "jest + enzyme",
+  "description": "React16 + Jest + Enzyme",
   "main": "index.js",
   "author": "daint2@fsoft.com.vn",
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "test": "cross-env NODE_ENV=test jest",
-    "test:watch": "yarn test --watch",
-    "test:watchAll": "yarn test --watchAll",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watchAll": "jest --watchAll",
     "test:clean": "rimraf ./coverage",
-    "test:coverage": "yarn test:clean && cross-env NODE_ENV=test JEST_ENV=coverage jest",
-    "test:storybook": "start-storybook -p 1234 --quiet"
+    "test:coverage": "yarn test:clean && cross-env JEST_ENV=coverage jest",
+    "test:storybook": "start-storybook -p 1234 --quiet",
+    "precommit": "lint-staged && yarn test"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --print-width 100 --semi false --single-quote --trailing-comma all --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/plugin-proposal-class-properties": "^7.3.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.3",
     "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@storybook/react": "^5.0.10",
     "autoprefixer": "^9.4.10",
     "babel-loader": "^8.0.5",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
+    "husky": "^2.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.7.1",
+    "jest-styled-components": "^6.3.1",
+    "jest-watch-typeahead": "^0.3.0",
+    "lint-staged": "^8.1.5",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
@@ -45,6 +59,7 @@
     "webpack-dev-server": "^3.2.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.3",
     "@babel/runtime-corejs2": "^7.3.4",
     "axios": "^0.18.0",
     "common-tags": "^1.8.0",

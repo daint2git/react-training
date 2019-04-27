@@ -1,3 +1,7 @@
+// needed for regenerator-runtime
+// (ES7 generator support is required by redux-saga)
+import '@babel/polyfill'
+
 import React from 'react'
 import { shallow, mount, render } from 'enzyme'
 import { createSerializer } from 'enzyme-to-json'
@@ -7,7 +11,7 @@ import renderer from 'react-test-renderer'
 // This produces an easier to read (for humans) serialized format.
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }))
 
-// Make Enzyme functions available in all test files without importing
+// Make all functions available in all test files without importing
 global.React = React
 global.shallow = shallow
 global.mount = mount

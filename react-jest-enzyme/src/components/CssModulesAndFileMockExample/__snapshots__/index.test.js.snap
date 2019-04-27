@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CssModulesAndFileMockExample 1. shallow 1`] = `
+<div
+  className="root"
+>
+  <button
+    className="button"
+  >
+    Click
+  </button>
+  <img
+    alt="file"
+    src="FILE_MOCK"
+  />
+</div>
+`;
+
+exports[`CssModulesAndFileMockExample 2. mount 1`] = `
+<div
+  className="root"
+>
+  <button
+    className="button"
+  >
+    Click
+  </button>
+  <img
+    alt="file"
+    src="FILE_MOCK"
+  />
+</div>
+`;
+
+exports[`CssModulesAndFileMockExample 3. render 1`] = `
+<div
+  className="root"
+>
+  <button
+    className="button"
+  >
+    Click
+  </button>
+  <img
+    alt="file"
+    src="FILE_MOCK"
+  />
+</div>
+`;
+
+exports[`CssModulesAndFileMockExample 4. renderer 1`] = `
+<div
+  className="root"
+>
+  <button
+    className="button"
+  >
+    Click
+  </button>
+  <img
+    alt="file"
+    src="FILE_MOCK"
+  />
+</div>
+`;

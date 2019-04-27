@@ -1,3 +1,4 @@
+import 'jest-styled-components'
 import Button from '../'
 
 describe('Button', () => {
