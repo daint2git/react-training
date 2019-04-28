@@ -1,18 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Link using mount 1`] = `
-<Link
-  url="http://www.facebook.com"
+<a
+  className="normal"
+  href="http://www.facebook.com"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <a
-    className="normal"
-    href="http://www.facebook.com"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    Facebook
-  </a>
-</Link>
+  Facebook
+</a>
 `;
 
 exports[`Link using react-test-renderer 1`] = `

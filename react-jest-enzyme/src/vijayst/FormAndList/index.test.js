@@ -20,7 +20,12 @@ describe('FormAndList', () => {
       expect(wrapper).toMatchSnapshot()
     })
 
-    test('4. render', () => {
+    test('4. mount (executed render method)', () => {
+      const wrapper = mount(<FormAndList />)
+      expect(wrapper.render()).toMatchSnapshot()
+    })
+
+    test('5. render', () => {
       const wrapper = render(<FormAndList />)
       expect(wrapper).toMatchSnapshot()
     })

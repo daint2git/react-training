@@ -7,13 +7,17 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack-dev-server --hot",
-    "test": "jest",
+    "test:unit": "jest",
     "test:watch": "jest --watch",
     "test:watchAll": "jest --watchAll",
     "test:clean": "rimraf ./coverage",
     "test:coverage": "yarn test:clean && cross-env JEST_ENV=coverage jest",
-    "test:storybook": "start-storybook -p 1234 --quiet",
-    "precommit": "lint-staged && yarn test"
+    "test:storybook": "start-storybook -p 1234 --quiet"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test:unit"
+    }
   },
   "lint-staged": {
     "src/**/*.js": [
@@ -50,6 +54,7 @@
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
     "postcss-simple-vars": "^5.0.2",
+    "raf": "^3.4.1",
     "react-test-renderer": "^16.8.6",
     "react-testing-library": "^6.1.2",
     "rimraf": "^2.6.3",

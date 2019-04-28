@@ -50,6 +50,5 @@ describe('ButtonGroup', () => {
   test('props', () => {
     const callBack = jest.fn()
     const wrapper = mount(<ButtonGroup list={list} onClick={callBack} />)
-    console.log(wrapper.props())
   })
 })
