@@ -12,7 +12,8 @@
     "test:watchAll": "jest --watchAll",
     "test:clean": "rimraf ./coverage",
     "test:coverage": "yarn test:clean && cross-env JEST_ENV=coverage jest",
-    "test:storybook": "start-storybook -p 1234 --quiet"
+    "test:storybook": "start-storybook -p 1234 --quiet",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "babel-loader": "^8.0.5",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "coveralls": "^3.0.3",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "enzyme": "^3.9.0",

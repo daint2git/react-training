@@ -33,7 +33,7 @@ exports[`FormAndList Snapshot 1. renderer 1`] = `
 </div>
 `;
 
-exports[`FormAndList Snapshot 2. shallow 1`] = `
+exports[`FormAndList Snapshot 2. shallow renderer 1`] = `
 <div>
   <Form2
     onAdd={[Function]}
@@ -44,7 +44,18 @@ exports[`FormAndList Snapshot 2. shallow 1`] = `
 </div>
 `;
 
-exports[`FormAndList Snapshot 3. mount 1`] = `
+exports[`FormAndList Snapshot 3. shallow 1`] = `
+<div>
+  <Form2
+    onAdd={[Function]}
+  />
+  <List
+    data={Array []}
+  />
+</div>
+`;
+
+exports[`FormAndList Snapshot 4. mount 1`] = `
 <div>
   <styled.form>
     <form
@@ -89,7 +100,7 @@ exports[`FormAndList Snapshot 3. mount 1`] = `
 </div>
 `;
 
-exports[`FormAndList Snapshot 4. mount (executed render method) 1`] = `
+exports[`FormAndList Snapshot 5. mount (executed render method) 1`] = `
 <div>
   <form
     class="sc-bdVaJa ksQzqc"
@@ -121,38 +132,7 @@ exports[`FormAndList Snapshot 4. mount (executed render method) 1`] = `
 </div>
 `;
 
-exports[`FormAndList Snapshot 4. render 1`] = `
-<div>
-  <form
-    class="sc-bdVaJa ksQzqc"
-  >
-    <input
-      class="sc-bwzfXH gmViiu"
-      name="email"
-      type="text"
-    />
-    <button
-      class="sc-htpNat keqZrr"
-    >
-      Add
-    </button>
-  </form>
-  <table
-    class="myClass"
-  >
-    <thead>
-      <tr>
-        <th>
-          Email
-        </th>
-      </tr>
-    </thead>
-    <tbody />
-  </table>
-</div>
-`;
-
-exports[`FormAndList Snapshot 5. render 1`] = `
+exports[`FormAndList Snapshot 6. render 1`] = `
 <div>
   <form
     class="sc-bdVaJa ksQzqc"

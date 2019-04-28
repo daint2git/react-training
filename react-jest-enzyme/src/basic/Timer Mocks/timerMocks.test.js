@@ -2,6 +2,10 @@ import { timerGame, infiniteTimerGame } from './timerMocks'
 
 describe('Timer Mocks', () => {
   describe('timerGame', () => {
+    beforeEach(() => {
+      jest.useFakeTimers()
+    })
+
     afterEach(() => {
       jest.clearAllTimers()
     })
@@ -29,6 +33,10 @@ describe('Timer Mocks', () => {
   })
 
   describe('infiniteTimerGame', () => {
+    beforeEach(() => {
+      jest.useFakeTimers()
+    })
+
     test('schedules a 10-second timer after 1 second (Run Pending Timers)', () => {
       const callback = jest.fn()
       infiniteTimerGame(callback)

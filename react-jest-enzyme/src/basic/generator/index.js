@@ -4,4 +4,4 @@ function* generator() {
   yield 3
 }
 
-export { generator }
+export default generator

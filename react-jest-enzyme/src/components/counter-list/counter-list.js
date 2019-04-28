@@ -25,7 +25,6 @@ class CounterList extends React.Component {
           ))}
         </ul>
         <Button onClick={this.addCounter}>add Counter</Button>
-        <CustomButton />
       </>
     )
   }

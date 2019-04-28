@@ -1,5 +1,6 @@
 import { mount, shallow, render } from 'enzyme'
 import renderer from 'react-test-renderer'
+import ShallowRenderer from 'react-test-renderer/shallow'
 import FormAndList from './'
 
 describe('FormAndList', () => {
@@ -10,22 +11,29 @@ describe('FormAndList', () => {
       expect(json).toMatchSnapshot()
     })
 
-    test('2. shallow', () => {
+    test('2. shallow renderer', () => {
+      const renderer = new ShallowRenderer()
+      renderer.render(<FormAndList />)
+      const json = renderer.getRenderOutput()
+      expect(json).toMatchSnapshot()
+    })
+
+    test('3. shallow', () => {
       const wrapper = shallow(<FormAndList />)
       expect(wrapper).toMatchSnapshot()
     })
 
-    test('3. mount', () => {
+    test('4. mount', () => {
       const wrapper = mount(<FormAndList />)
       expect(wrapper).toMatchSnapshot()
     })
 
-    test('4. mount (executed render method)', () => {
+    test('5. mount (executed render method)', () => {
       const wrapper = mount(<FormAndList />)
       expect(wrapper.render()).toMatchSnapshot()
     })
 
-    test('5. render', () => {
+    test('6. render', () => {
       const wrapper = render(<FormAndList />)
       expect(wrapper).toMatchSnapshot()
     })

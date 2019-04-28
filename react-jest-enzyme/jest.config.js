@@ -1,7 +1,6 @@
 let config
 const baseConfig = {
   verbose: true,
-  timers: 'fake',
   setupFiles: ['raf/polyfill', '<rootDir>/scripts/test/env-setup.js'],
   setupFilesAfterEnv: ['<rootDir>/scripts/test/test-setup.js'],
 
@@ -16,9 +15,9 @@ const baseConfig = {
 
   testMatch: [
     '<rootDir>/src/**/__tests__/**/*.js',
-    '<rootDir>/src/**/?(*.)+(spec|test).js',
+    '<rootDir>/src/**/*.test.js',
   ],
-  // testMatch: ['<rootDir>/src/vijayst/FormAndList/**/*.test.js'],
+  // testMatch: ['<rootDir>/src/basic/Timer Mocks/**/*.test.js'],
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
 
   watchPlugins: [
