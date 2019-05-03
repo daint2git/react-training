@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepoList should render correctly default data 1`] = `
+<div>
+  <h2>
+    Repos
+  </h2>
+  <ul />
+  <p>
+    Have 
+    0
+     repos.
+  </p>
+</div>
+`;
+
+exports[`RepoList should render correctly mock data 1`] = `
+<div>
+  <h2>
+    Repos
+  </h2>
+  <ul>
+    <li
+      key="1"
+    >
+      abc1
+    </li>
+    <li
+      key="2"
+    >
+      abc2
+    </li>
+  </ul>
+  <p>
+    Have 
+    2
+     repos.
+  </p>
+</div>
+`;

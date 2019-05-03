@@ -46,5 +46,18 @@
         },
       },
     ],
-  ]
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 2,
+      },
+    ],
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "@babel/plugin-transform-modules-commonjs",
+      ],
+    }
+  }
 }

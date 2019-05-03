@@ -10,7 +10,8 @@
     "npm": ">=5.6.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot",
+    "test": "jest --watch"
   },
   "husky": {
     "hooks": {
@@ -24,6 +25,8 @@
     ]
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/runtime-corejs2": "^7.4.4",
     "axios": "^0.18.0",
     "mobx": "^5.9.4",
     "mobx-react": "^5.4.3",
@@ -39,12 +42,21 @@
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-module-resolver": "^3.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-jest": "^22.5.1",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^2.1.0",
+    "jest": "^24.7.1",
     "lint-staged": "^8.1.5",
     "prettier": "^1.17.0",
     "webpack": "^4.30.0",
