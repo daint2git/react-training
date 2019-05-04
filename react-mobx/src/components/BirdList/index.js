@@ -1,7 +1,6 @@
 import React from 'react'
 
-const BirdList = React.memo(props => {
-  const { birds, birdCount } = props
+function BirdList({ birds, birdCount }) {
   return (
     <div>
       <ul>
@@ -14,6 +13,6 @@ const BirdList = React.memo(props => {
       <p>Have {birdCount} birds.</p>
     </div>
   )
-})
+}
 
-export default BirdList
+export default React.memo(BirdList)
