@@ -1,20 +1,12 @@
-import { Provider } from 'mobx-react'
 import RepoList from './'
 
-const renderComponentWithStore = store =>
-  mount(
-    <Provider RepoStore={store}>
-      <RepoList />
-    </Provider>,
-  )
+const renderComponentWithStore = store => mount(<RepoList RepoStore={store} />)
 
 describe('RepoList', () => {
   let wrapper
 
   afterEach(() => {
-    if (wrapper) {
-      wrapper.unmount()
-    }
+    wrapper.unmount()
   })
 
   test('should render correctly default data', () => {
