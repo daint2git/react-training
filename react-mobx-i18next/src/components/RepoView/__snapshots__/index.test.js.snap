@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RepoView should render correctly default data 1`] = `
+<div
+  className="container"
+>
+  <h2>
+    t('title')
+  </h2>
+  <h3>
+    Repos
+  </h3>
+  <h4>
+    6
+  </h4>
+  Array [
+    <ul />,
+    <p>
+      Have 
+      0
+       repos.
+    </p>,
+  ]
+  <br />
+  <p>
+    t('description.part1')
+  </p>
+  <p>
+    t('description.part2')
+  </p>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      vi
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      en
+    </button>
+  </div>
+</div>
+`;
+
+exports[`RepoView should render correctly mock data 1`] = `
+<div
+  className="container"
+>
+  <h2>
+    t('title')
+  </h2>
+  <h3>
+    Repos
+  </h3>
+  <h4>
+    6
+  </h4>
+  Array [
+    <ul>
+      <li
+        key="1"
+      >
+        abc1
+      </li>
+      <li
+        key="2"
+      >
+        abc2
+      </li>
+    </ul>,
+    <p>
+      Have 
+      2
+       repos.
+    </p>,
+  ]
+  <br />
+  <p>
+    t('description.part1')
+  </p>
+  <p>
+    t('description.part2')
+  </p>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      vi
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      en
+    </button>
+  </div>
+</div>
+`;
