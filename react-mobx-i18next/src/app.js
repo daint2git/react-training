@@ -10,6 +10,5 @@ ReactDOM.render(
   <Provider {...stores}>
     <Root />
   </Provider>,
-
   document.getElementById('root'),
 )
