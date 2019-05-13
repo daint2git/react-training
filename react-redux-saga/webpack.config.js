@@ -3,7 +3,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const rootDir = path.resolve(process.cwd())
-const staticPath = path.resolve(rootDir, 'static')
+const publicPath = path.resolve(rootDir, 'public')
 const srcPath = path.resolve(rootDir, 'src')
 const buildPath = path.resolve(rootDir, 'build')
 
@@ -64,8 +64,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${staticPath}/index.html`,
-      favicon: `${staticPath}/favicon.ico`,
+      template: `${publicPath}/index.html`,
+      favicon: `${publicPath}/favicon.ico`,
     }),
   ],
   devServer: {
