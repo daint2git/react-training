@@ -1,21 +1,33 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-class Content extends React.Component {
-  state = { data: [] }
+import { fetchRepos } from 'redux/reducers/repos'
 
-  componentDidMount() {
-    this.load()
-  }
-
-  load = async () => {
-    const result = await Array.from([1, 2, 3], x => x + x)
-    this.setState({ data: result })
-  }
-
-  render() {
-    const { data } = this.state
-    return <div>{data}</div>
-  }
+const Content = ({ list, onFetch }) => {
+  return (
+    <div>
+      <button type="button" onClick={onFetch}>
+        Fetch new repos
+      </button>
+      <h3>Repos</h3>
+      <ul>
+        {list.map(repo => (
+          <li key={repo.id}>{repo.html_url}</li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
-export default Content
+const mapStateToProps = state => ({
+  list: state.repos.list,
+})
+
+const mapDispatchToProps = {
+  onFetch: fetchRepos,
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Content)

@@ -17,6 +17,18 @@ export class RepoStore {
     }
   }
 
+  // @action
+  // fetchRepos = async () => {
+  //   const res = await axios.get('https://api.github.com/users/daint2git/repos')
+  //   if (Array.isArray(res.data) && res.data.length > 0) {
+  //     const repos = res.data.map(repo => ({
+  //       id: repo.id,
+  //       htmlUrl: repo.html_url,
+  //     }))
+  //     this.repos = repos
+  //   }
+  // }
+
   @computed
   get repoCount() {
     return this.repos.length

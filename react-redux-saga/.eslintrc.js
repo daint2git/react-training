@@ -67,6 +67,7 @@ module.exports = {
         ignorePureComponents: true,
       },
     ],
+    'react/prop-types': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 2,
 
@@ -138,5 +139,6 @@ module.exports = {
         allow: ['arrowFunctions'],
       },
     ],
+    'no-shadow': 0,
   },
 }

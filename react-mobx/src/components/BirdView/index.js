@@ -7,6 +7,10 @@ import BirdList from '@components/BirdList'
 @inject('BirdStore')
 @observer
 class BirdView extends React.Component {
+  componentWillReact() {
+    console.log('I will re-render, since the todo has changed!')
+  }
+
   render() {
     const {
       BirdStore: { birds, birdCount, addBird },
