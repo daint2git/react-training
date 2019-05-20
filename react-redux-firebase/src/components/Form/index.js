@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
 import { createTodo } from 'redux/reducers/todos'
+import File from 'components/File'
+import Animation from 'components/Animation'
 
 const Form = ({ createTodo }) => {
   const [value, updateValue] = useState('')
@@ -16,6 +18,8 @@ const Form = ({ createTodo }) => {
         }}
       >
         <input type="text" value={value} onChange={e => updateValue(e.target.value)} />
+        <File />
+        <Animation />
         <input type="submit" />
       </form>
     </div>

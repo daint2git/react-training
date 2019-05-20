@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "react-redux-saga"
+		},
+		{
+			"path": "react-mobx"
+		},
+		{
+			"path": "react-reselect"
+		},
+		{
+			"path": "react-redux-firebase"
+		},
+		{
+			"path": "react-basic"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "react-redux-firebase"
+	}
+}
