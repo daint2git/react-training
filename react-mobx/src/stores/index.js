@@ -1,9 +1,11 @@
 import BirdStore from './BirdStore'
 import RepoStore from './RepoStore'
+import LoaderStore from './LoaderStore'
 
 const stores = {
   BirdStore,
   RepoStore,
+  LoaderStore,
 }
 
 if (process.env.NODE_ENV === 'development') {

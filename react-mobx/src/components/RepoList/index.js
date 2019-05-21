@@ -16,6 +16,7 @@ class RepoList extends React.Component {
     const {
       RepoStore: { repos, repoCount },
     } = this.props
+    console.warn('renderrrr')
 
     return (
       <div>
