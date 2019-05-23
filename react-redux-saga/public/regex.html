@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .parent {
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    transition: border-color 0.15s ease-in-out;
+  }
+
+  .element {
+    border: 1px solid;
+  }
+
+  .parent:hover .element {
+    border-color: red;
+  }
+
+  .btn {
+    pointer-events: auto;
+  }
+</style>
+
+<body>
+  <div class='parent'>
+    <button class='btn'>
+      Hover me
+    </button>
+    <div class='element' >AAAAA</div>
+  </div>
+  <script>
+    const regex = new RegExp('hey')
+
+    console.log(regex.test('hey')) // true
+    console.log(regex.test('het')) // false
+    console.log(regex.test('blablabla hey blablabla')) // true
+
+    console.log(/^hey/.test('hey'))
+    console.log(/^hey/.test('bla hey'))
+
+    console.log(/hey$/.test('hey'))
+    console.log(/hey$/.test('bla hey'))
+    console.log(/hey$/.test('hey you'))
+
+    console.log('----------')
+    console.log(/^hey.*joe$/.test('hey joe'))
+    console.log(/^hey.*joe$/.test('heyjoe'))
+    console.log(/^hey.*joe$/.test('hey how are you joe'))
+    console.log(/^hey.*joe$/.test('hey joe!'))
+    console.log('----------')
+
+    console.log(/[a-z]/.test('a'))
+    console.log(/[a-z]/.test('A'))
+    console.log(/[a-z]/.test('1'))
+    console.log(/[a-c]/.test('dc'))
+    console.log(/[A-Za-z0-9]/.test('a'))
+    console.log(/[A-Za-z0-9]/.test('1'))
+    console.log(/[A-Za-z0-9]/.test('A'))
+    console.log(/^[A-Za-z0-9]$/.test('A'))
+    console.log(/^[A-Za-z0-9]$/.test('Ab'))
+    console.log('----------Inverse')
+    console.log(/[^A-Za-z0-9]/.test('a')) // false
+    console.log(/[^A-Za-z0-9]/.test('1')) // false
+    console.log(/[^A-Za-z0-9]/.test('A')) // false
+    console.log(/[^A-Za-z0-9]/.test('@')) // true
+
+    /* Một số cú pháp đặc biệt */
+    // \d tương tự như [0-9], chỉ là các giá trị số
+    // \D tương tự như `0-9, không chưa các ký tự số
+    // \w tương tự như [A-Za-z0-9], bao gồm ký tự chữ và số
+    // \W tương tự như [^A-Za-z0-9], không chứa ký tự chữ và số
+    // \s chứa các ký tự khoản trống như: space, tab, newline
+    // \S không chứa ký tự khoản trống
+    // \0 chứa ký tự null
+    // \n chứa ký tự xuống dòng (newline)
+    // \t chứ ký tự tab
+
+    console.log('----------Câu điều kiện Or')
+    console.log(/hey|ho/.test('hey'))
+    console.log(/hey|ho/.test('ho'))
+
+    console.log('----------Quantifiers')
+    console.log('----------(+)')
+    console.log(/^\d+$/.test('12'))
+    console.log(/^\d+$/.test('14'))
+    console.log(/^\d+$/.test('144343'))
+    console.log(/^\d+$/.test('')) // false
+    console.log(/^\d+$/.test('1a')) // false
+
+    console.log('----------(*)')
+    console.log(/^\d*$/.test('12'))    //✅
+    console.log(/^\d*$/.test('14'))    //✅
+    console.log(/^\d*$/.test('144343')) //✅
+    console.log(/^\d*$/.test(''))   //✅
+    console.log(/^\d*$/.test('1a'))   //❌
+
+    console.log('----------({n})')
+    console.log(/^\d{3}$/.test('123'))  //✅
+    console.log(/^\d{3}$/.test('12'))  //❌
+    console.log(/^\d{3}$/.test('1234')) //❌
+
+    console.log(/^[A-Za-z0-9]{3}$/.test('Abc')) //✅
+
+    console.log('----------({n,m})')
+    console.log(/^\d{3,5}$/.test('123'))   //✅
+    console.log(/^\d{3,5}$/.test('1234'))  //✅
+    console.log(/^\d{3,5}$/.test('12345'))  //✅
+    console.log(/^\d{3,5}$/.test('123456')) //❌
+
+    console.log('----------({n,})')
+    console.log(/^\d{3,}$/.test('12'))       //❌
+    console.log(/^\d{3,}$/.test('123'))     //✅
+    console.log(/^\d{3,}$/.test('12345'))    //✅
+    console.log(/^\d{3,}$/.test('123456789')) //✅
+
+    console.log('----------Điều kiện không bắt buộc (optional) (?)')
+    console.log(/^\d{3}\w?$/.test('123'))  //✅
+    console.log(/^\d{3}\w?$/.test('123a')) //✅
+    console.log(/^\d{3}\w?$/.test('123ab')) //❌
+    console.log(/^\d{3}\w?$/.test('123abc')) //❌
+    console.log(/^\d{3}\w{2}?$/.test('123ab')) //✅
+
+    console.log('----------Group')
+    console.log(/^(\d{3})(\w+)$/.test('123'))    //❌
+    console.log(/^(\d{3})(\w+)$/.test('123s'))     //✅
+    console.log(/^(\d{3})(\w+)$/.test('123something')) //✅
+    console.log(/^(\d{3})(\w+)$/.test('1234'))     //✅
+    console.log(/^(\d{2})+$/.test('12'))   //✅
+    console.log(/^(\d{2})+$/.test('123'))  //❌
+    console.log(/^(\d{2})+$/.test('1234')) //✅
+
+    console.log('----------Lấy giá trị của Group')
+    console.log('123s'.match(/^(\d{3})(\w+)$/))
+    console.log(/^(\d{3})(\w+)$/.exec('123s'))
+    console.log('123456789'.match(/(\d)+/))
+
+    /* Flag */
+    // g: kiểm tra điều kiện nhiều lần
+    // i: không phân biệt hoa thường
+    // m: cho phép kiểm tra xuống dòng
+    // u: bật hỗ trợ unicode
+    console.log(/hey/ig.test('HEy')) //✅
+    console.log(new RegExp('hey', 'ig').test('HEy')) //✅
+
+
+    console.log('----------Một vài ứng dụng')
+    // Lấy số từ String
+    console.log('Test 123123329'.match(/\d+/))
+    // Kiểm tra email
+    console.log(/(\S+)@(\S+)\.(\S+)/.exec('copesc@gmail.com'))
+
+    // Lấy đoạn test nằm giữa dấu ""
+    const hello = 'Hello "nice flower"'
+    console.log(/"([^']*)"/.exec(hello))
+  </script>
+</body>
+
+</html>

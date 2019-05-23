@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px 60px;
+      background: red;
+    }
+
+    #div2 {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px / 60px;
+      background: red;
+    }
+
+    #div3 {
+      width: 100px;
+      height: 100px;
+      border-radius: 20px 50px 50px 20px / 60px 40px 60px 40px;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="div1">
+    AAAA
+  </div>
+  <br />
+  <div id="div2">
+    BBBB
+  </div>
+  <br />
+  <div id="div3">
+    CCCC
+  </div>
+  <script>
+    // Promise.resolve(1)
+    //   .then(res => {
+    //     console.log(res) // 1
+    //     throw new Error('something went wrong');
+    //     return Promise.resolve(2);
+    //   })
+    //   .then(res => {
+    //     // sẽ không chạy
+    //     console.log(res);
+    //   })
+    //   .catch(err => {
+    //     console.log('catch 1')
+    //     console.error(err);
+    //     return Promise.resolve(3)
+    //   })
+    //   .then(res => {
+    //     // (A)
+    //     console.log(res) // 3
+    //   })
+    //   .catch(err => {
+    //     console.log('catch 2')
+    //     // trong trường hợp block (A) xảy ra lỗi
+    //     console.error(err)
+    //   })
+
+    function Animal(name, energy) {
+      this.name = name
+      this.energy = energy
+    }
+
+    Animal.prototype.eat = function (amount) {
+      console.log(`${this.name} is eating.`)
+      this.energy += amount
+    }
+
+    Animal.prototype.sleep = function (length) {
+      console.log(`${this.name} is sleeping.`)
+      this.energy += length
+    }
+
+    Animal.prototype.play = function (length) {
+      console.log(`${this.name} is playing.`)
+      this.energy -= length
+    }
+
+    const leo = new Animal('Leo', 7)
+    const prototype = Object.getPrototypeOf(leo)
+
+    console.log(prototype)
+    // {constructor: ƒ, eat: ƒ, sleep: ƒ, play: ƒ}
+
+    console.log(prototype === Animal.prototype) // true
+  </script>
+</body>
+
+</html>

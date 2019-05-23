@@ -1,5 +1,6 @@
 import React from 'react'
 import { inject, observer } from 'mobx-react'
+import withStyles from '@hocs/withStyles'
 
 @inject('RepoStore')
 @observer
@@ -12,14 +13,18 @@ class RepoList extends React.Component {
     fetchRepos()
   }
 
+  static getCurrentTime() {
+    console.log(Date.now())
+  }
+
   render() {
     const {
       RepoStore: { repos, repoCount },
+      styles,
     } = this.props
-    console.warn('renderrrr')
 
     return (
-      <div>
+      <div style={styles}>
         <h2>Repos</h2>
         <ul>
           {repos.map(repo => (
@@ -32,4 +37,4 @@ class RepoList extends React.Component {
   }
 }
 
-export default RepoList
+export default withStyles(RepoList)

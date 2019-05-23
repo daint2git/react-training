@@ -1,40 +1,14 @@
-const isLooseMode = true
+const loose = true
 
 module.exports = {
   presets: [
-    [
-      '@babel/preset-env',
-      {
-        modules: false,
-        loose: isLooseMode,
-      },
-    ],
-    [
-      '@babel/preset-react',
-      {
-        development: true,
-      },
-    ],
+    ['@babel/preset-env', { modules: false, loose }],
+    ['@babel/preset-react', { development: true }],
   ],
   plugins: [
-    [
-      '@babel/plugin-proposal-class-properties',
-      {
-        loose: isLooseMode,
-      },
-    ],
-    [
-      '@babel/plugin-proposal-object-rest-spread',
-      {
-        loose: isLooseMode,
-      },
-    ],
+    ['@babel/plugin-proposal-class-properties', { loose }],
+    ['@babel/plugin-proposal-object-rest-spread', { loose }],
     '@babel/plugin-syntax-dynamic-import',
-    [
-      '@babel/plugin-transform-runtime',
-      {
-        corejs: 2,
-      },
-    ],
+    ['@babel/plugin-transform-runtime', { corejs: 2 }],
   ],
 }
