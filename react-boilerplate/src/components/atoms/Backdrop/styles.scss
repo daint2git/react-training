@@ -1,0 +1,17 @@
+@import 'sass/colors';
+@import 'sass/variables';
+
+.root {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &.loading {
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: $loading_backdrop_layer;
+  }
+}

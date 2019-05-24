@@ -19,12 +19,15 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 6,
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
 
   settings: {
     'import/resolver': {
       webpack: {
-        config: './configs/webpack/webpack.config.js',
+        config: './configs/webpack/webpack.common.js',
       },
     },
   },
@@ -67,6 +70,7 @@ module.exports = {
         ignorePureComponents: true,
       },
     ],
+    'react/require-default-props': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 2,
 
@@ -131,12 +135,6 @@ module.exports = {
       {
         allowShortCircuit: true,
         allowTernary: true,
-      },
-    ],
-    'no-empty-function': [
-      2,
-      {
-        allow: ['arrowFunctions'],
       },
     ],
   },

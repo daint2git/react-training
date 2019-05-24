@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 
 const common = require('./webpack.common')
-const { publicPath, buildPath } = require('./path')
+const { buildPath, templatePath, faviconPath } = require('./paths')
 
 module.exports = merge(common, {
   mode: 'development',
@@ -12,6 +12,26 @@ module.exports = merge(common, {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
   },
+  module: {
+    rules: [
+      {
+        test: /\.s(a|c)ss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 2,
+              localIdentName: '[path][name]__[local]--[hash:base64:5]',
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
   devtool: 'eval-source-map',
   optimization: {
     splitChunks: {
@@ -20,15 +40,15 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: buildPath,
-    port: 6969,
+    host: '0.0.0.0',
+    port: 3000,
     compress: true,
-    hot: true,
     historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${publicPath}/template.html`,
-      favicon: `${publicPath}/favicon.ico`,
+      template: templatePath,
+      favicon: faviconPath,
     }),
   ],
 })

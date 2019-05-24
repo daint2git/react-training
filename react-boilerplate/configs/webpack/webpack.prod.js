@@ -1,10 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CompressionPlugin = require('compression-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const merge = require('webpack-merge')
 
 const common = require('./webpack.common')
-const { publicPath, buildPath } = require('./path')
+const { buildPath, templatePath, faviconPath } = require('./paths')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,6 +15,26 @@ module.exports = merge(common, {
     path: buildPath,
     filename: '[name].[chunkhash].js',
     chunkFilename: '[name].[chunkhash].chunk.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s(a|c)ss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 2,
+              localIdentName: 'css-[hash:base64:8]',
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
   optimization: {
     minimize: true,
@@ -34,6 +56,7 @@ module.exports = merge(common, {
         cache: true,
         sourceMap: true,
       }),
+      new OptimizeCSSAssetsPlugin({}),
     ],
     nodeEnv: 'production',
     sideEffects: true,
@@ -47,8 +70,8 @@ module.exports = merge(common, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${publicPath}/index.html`,
-      favicon: `${publicPath}/favicon.ico`,
+      template: templatePath,
+      favicon: faviconPath,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -67,6 +90,10 @@ module.exports = merge(common, {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8,
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash].css',
+      chunkFilename: '[id].[hash].css',
     }),
   ],
 })
