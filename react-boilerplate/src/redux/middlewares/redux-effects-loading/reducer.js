@@ -1,20 +1,26 @@
-import { createActionWithPrefix, handleActions, handleAction } from 'redux/toolbelt'
+const CONTEXT = '@@redux-effects-loading'
+// action types
+const PREVENT_SUBMIT = `${CONTEXT}/PREVENT_SUBMIT`
+const START = `${CONTEXT}/START`
+const STOP = `${CONTEXT}/STOP`
 
-const ROOT = '@@redux-effects-loading'
-export const preventSubmit = createActionWithPrefix(ROOT)('PREVENT_SUBMIT')
-export const startLoading = createActionWithPrefix(ROOT)('START_LOADING')
-export const stopLoading = createActionWithPrefix(ROOT)('STOP_LOADING')
+// action creators
+export const preventSubmit = () => ({ type: PREVENT_SUBMIT })
+export const start = () => ({ type: START })
+export const stop = () => ({ type: STOP })
 
-const INITIAL_STATE = () => ({
-  shouldPreventSubmit: false,
-  isLoading: false,
-})
+const initalState = { shouldPreventSubmit: false, isLoading: false }
 
-export default handleActions(
-  [
-    handleAction(preventSubmit, () => ({ shouldPreventSubmit: true, isLoading: false })),
-    handleAction(startLoading, () => ({ shouldPreventSubmit: true, isLoading: true })),
-    handleAction(stopLoading, () => ({ shouldPreventSubmit: false, loading: false })),
-  ],
-  INITIAL_STATE(),
-)
+// reducer
+export default (state = initalState, action) => {
+  switch (action.type) {
+    case PREVENT_SUBMIT:
+      return { shouldPreventSubmit: true, isLoading: false }
+    case START:
+      return { shouldPreventSubmit: true, isLoading: false }
+    case STOP:
+      return { shouldPreventSubmit: true, isLoading: false }
+    default:
+      return state
+  }
+}

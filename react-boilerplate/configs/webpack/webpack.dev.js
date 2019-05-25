@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const merge = require('webpack-merge')
 
 const common = require('./webpack.common')
@@ -40,15 +41,19 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: buildPath,
-    host: '0.0.0.0',
     port: 3000,
     compress: true,
+    open: true,
     historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: templatePath,
       favicon: faviconPath,
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerPort: 8888,
+      openAnalyzer: true,
     }),
   ],
 })

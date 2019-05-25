@@ -1,26 +1,20 @@
 import { createMiddleware } from 'redux/toolbelt'
 
-import { preventSubmit, startLoading, stopLoading } from './reducer'
+import { preventSubmit, start, stop } from './reducer'
 
-const loading = (store, next, action) => {
-  const { dispatch } = store
+const loading = ({ dispatch }, next, action) => {
   dispatch(preventSubmit())
-  const timerId = setTimeout(() => dispatch(startLoading()), 100)
+  const timerId = setTimeout(() => dispatch(start()), 300)
   return next(action)
     .then(response => {
-      const { data } = response
       clearTimeout(timerId)
-      dispatch(stopLoading())
-      return data
+      dispatch(stop())
+      return response
     })
     .catch(error => {
-      const { response } = error
-      const { status, data } = response
       clearTimeout(timerId)
-      dispatch(stopLoading())
-      /* eslint-disable prefer-promise-reject-errors */
-      return Promise.reject({ status, data })
-      /* eslint-enable prefer-promise-reject-errors */
+      dispatch(stop())
+      return Promise.reject(error) // eslint-disable-line prefer-promise-reject-errors
     })
 }
 

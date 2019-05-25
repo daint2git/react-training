@@ -1,9 +1,11 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import Home from 'pages/Home'
-import About from 'pages/About'
-import NotFound from 'pages/NotFound'
+import withDynamicImport from 'hocs/withDynamicImport'
+
+const Home = withDynamicImport(() => import('../pages/Home/index'))
+const About = withDynamicImport(() => import('../pages/About/index'))
+const NotFound = withDynamicImport(() => import('../pages/NotFound/index'))
 
 const configureRoutes = () => (
   <Switch>

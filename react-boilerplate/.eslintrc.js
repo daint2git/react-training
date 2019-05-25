@@ -101,7 +101,7 @@ module.exports = {
     'import/newline-after-import': 1,
     'import/no-dynamic-require': 1,
     'import/no-unresolved': 2,
-    'import/first': 1,
+    'import/first': 2,
     'import/no-extraneous-dependencies': 0,
 
     'prefer-arrow-callback': 2,

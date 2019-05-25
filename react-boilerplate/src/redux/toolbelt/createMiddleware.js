@@ -1,9 +1,9 @@
-import either from './either'
+import noop from './utils/noop'
+import either from './utils/either'
 
-const createMiddleware = (targetActions = [], middleware) => store => next => action => {
-  if (!targetActions.find(targetAction => action.type === either(targetAction.type)(targetAction)))
-    return next(action)
-  return middleware(store, next, action)
-}
+const createMiddleware = (targetActions = [], handler = noop) => store => next => action =>
+  targetActions.some(targetAction => action.type === either(targetAction.type)(targetAction))
+    ? handler(store, next, action)
+    : next(action)
 
 export default createMiddleware

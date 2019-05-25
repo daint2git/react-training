@@ -1,7 +1,6 @@
 export { default as createAction } from './createAction'
-export { default as createActionWithPrefix } from './createActionWithPrefix'
 export { default as createErrorAction } from './createErrorAction'
-export { default as createErrorActionWithPrefix } from './createErrorActionWithPrefix'
+export { default as createSideEffectAction } from './createSideEffectAction'
 export { default as handleAction } from './handleAction'
 export { default as handleActions } from './handleActions'
 export { default as createMiddleware } from './createMiddleware'

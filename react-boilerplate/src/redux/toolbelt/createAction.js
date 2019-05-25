@@ -1,9 +1,12 @@
-const createAction = (type, error = false, payloadCreator = value => value, metaCreator = {}) => {
+import identity from './utils/identity'
+import noop from './utils/noop'
+
+const createAction = (type, error = false, payloadCreator = identity, metaCreator = noop) => {
   const actionCreator = (...args) => ({
     type,
     error,
     payload: payloadCreator(...args),
-    metaCreator,
+    meta: metaCreator(...args),
   })
   actionCreator.type = type
   return actionCreator

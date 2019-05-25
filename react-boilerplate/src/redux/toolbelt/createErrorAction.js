@@ -2,11 +2,15 @@ import createAction from './createAction'
 
 const ERROR = 'ERROR'
 
-const payloadError = error => ({
-  ...error.data,
-  status: error.status,
+const errorHandler = error => ({
+  errors: {
+    data: {
+      ...error.response.data,
+    },
+    status: error.response.status,
+  },
 })
 
-const createErrorAction = type => createAction(`${ERROR}/${type}`, true, payloadError)
+const createErrorAction = type => createAction(`${ERROR}/${type}`, true, errorHandler)
 
 export default createErrorAction
