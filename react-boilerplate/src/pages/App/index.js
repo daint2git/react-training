@@ -1,48 +1,28 @@
 import { hot } from 'react-hot-loader'
 import React from 'react'
-import classnames from 'classnames/bind'
-import { useTranslation } from 'react-i18next'
+import { Switch, Route } from 'react-router-dom'
 
-import reactLogo from 'svgs/react-logo.svg'
-import reduxLogo from 'svgs/redux-logo.svg'
-import configureRoutes from 'routes/configureRoutes'
-import Loading from 'components/molecules/Loading'
+import slowImport from 'utils/slowImport'
+import { Loading } from 'components/molecules/Loading'
+import RootLayout from 'components/templates/RootLayout'
+import withDynamicImport from 'hocs/withDynamicImport'
 
-import Navigation from './Navigation'
-import styles from './styles.scss'
+const Home = withDynamicImport(() => import('../Home'))
+const About = withDynamicImport(() => import('../About'))
+const Login = withDynamicImport(() => import('../Login'))
+const NotFound = withDynamicImport(() => slowImport(import('../NotFound'), 1000), {
+  fallback: <Loading />,
+})
 
-const cx = classnames.bind(styles)
-
-const routes = configureRoutes()
-
-const App = () => {
-  const { t, i18n } = useTranslation()
-  const onLanguageChange = lng => {
-    i18n.changeLanguage(lng)
-  }
-
-  return (
-    <>
-      <div className={cx('root')}>
-        <div className={cx('header')}>
-          <h1 className={cx('title')}>{t('title')}</h1>
-          <img className={cx('logo')} src={reactLogo} alt="react-logo" />
-          <img className={cx('logo')} src={reduxLogo} alt="redux-logo" />
-          <button className={cx('button')} type="button" onClick={() => onLanguageChange('en')}>
-            english
-          </button>
-          <button className={cx('button')} type="button" onClick={() => onLanguageChange('ja')}>
-            japanese
-          </button>
-        </div>
-        <div>
-          <Navigation />
-        </div>
-        <div>{routes}</div>
-      </div>
-      <Loading />
-    </>
-  )
-}
+const App = () => (
+  <RootLayout>
+    <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/login" component={Login} />
+      <Route component={NotFound} />
+    </Switch>
+  </RootLayout>
+)
 
 export default hot(module)(App)

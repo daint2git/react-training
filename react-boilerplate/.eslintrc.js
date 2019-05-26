@@ -103,6 +103,7 @@ module.exports = {
     'import/no-unresolved': 2,
     'import/first': 2,
     'import/no-extraneous-dependencies': 0,
+    'import/no-named-as-default': 0,
 
     'prefer-arrow-callback': 2,
     'prefer-spread': 2,

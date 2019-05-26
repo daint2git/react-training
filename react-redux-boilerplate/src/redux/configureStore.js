@@ -1,10 +1,11 @@
 import { createStore, compose, applyMiddleware } from 'redux'
 import { ReduxEmitter } from 'kuker-emitters'
 
+import logActionMiddleware from './logActionMiddleware'
 import rootReducer from './reducers/rootReducer'
 
 export default function configureStore(initialState = {}) {
-  const middlewares = [ReduxEmitter()]
+  const middlewares = [logActionMiddleware()]
 
   const enhancers = compose(applyMiddleware(...middlewares))
 

@@ -11,20 +11,6 @@
   .header {
     display: flex;
     align-items: center;
-
-    & > .button {
-      padding: 20px;
-      font-size: $fs_x_large;
-      width: 100%;
-
-      &:hover {
-        background: red;
-      }
-
-      &:last-child {
-        margin-left: 20px;
-      }
-    }
   }
 
   .title {

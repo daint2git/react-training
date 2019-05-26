@@ -44,7 +44,6 @@ module.exports = {
   },
   devServer: {
     port: 6969,
-    open: true,
   },
   devtool: 'eval-source-map',
 }

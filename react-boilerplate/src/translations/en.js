@@ -3,6 +3,7 @@ export default {
   routes: {
     home: 'Home',
     about: 'About',
+    login: 'Login',
     other: 'Other',
   },
 }

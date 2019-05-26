@@ -3,9 +3,9 @@ const initialState = () => ({
 })
 
 const actionTypes = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
-  RESET: 'RESET',
+  INCREMENT: 'INCREMENT3',
+  DECREMENT: 'DECREMENT3',
+  RESET: 'RESET3',
 }
 
 // actionCreators
@@ -23,7 +23,7 @@ export const resetCount = () => ({
 
 // reducer
 const counter = (state = initialState(), action) => {
-  console.log('counter 1', action)
+  console.log('counter 3', action)
   const { type } = action
   switch (type) {
     case actionTypes.INCREMENT:
