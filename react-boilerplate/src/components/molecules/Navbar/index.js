@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import classnames from 'classnames/bind'
 
+import useDocumentTitle from 'hooks/useDocumentTitle'
 import { ROUTES, LANGUAGE_OPTIONS } from 'utils/constants'
 
 import styles from './styles'
@@ -16,6 +17,8 @@ const Navbar = ({ location }) => {
   const onLanguageChange = e => {
     i18n.changeLanguage(e.target.value)
   }
+
+  useDocumentTitle(t(`routes.${location.pathname.replace('/', '') || 'home'}`))
 
   return (
     <nav className={cx('root')}>
