@@ -3,7 +3,7 @@
     "eslint --fix",
     "git add --force"
   ],
-  "src/**/*.scss": [
+  "*.scss": [
     "stylelint --fix",
     "git add --force"
   ]
