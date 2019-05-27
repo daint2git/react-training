@@ -11,9 +11,9 @@ const initalState = { shouldPreventSubmit: false, isLoading: false }
 
 export default handleActions(
   [
-    handleAction(preventSubmit, () => ({ shouldPreventSubmit: true, loading: false })),
-    handleAction(start, () => ({ shouldPreventSubmit: true, loading: true })),
-    handleAction(stop, () => ({ shouldPreventSubmit: false, loading: false })),
+    handleAction(preventSubmit, () => ({ shouldPreventSubmit: true, isLoading: false })),
+    handleAction(start, () => ({ shouldPreventSubmit: true, isLoading: true })),
+    handleAction(stop, () => ({ shouldPreventSubmit: false, isLoading: false })),
   ],
   initalState,
 )
