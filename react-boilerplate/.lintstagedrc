@@ -4,7 +4,7 @@
     "git add --force"
   ],
   "*.scss": [
-    "stylelint --fix",
+    "stylelint --syntax=scss --fix",
     "git add --force"
   ]
 }
