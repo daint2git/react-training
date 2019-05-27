@@ -16,15 +16,15 @@ export const Request = {
     return call({ method: 'get', options })
   },
   post(options) {
-    return call({ method: 'get', options })
+    return call({ method: 'post', options })
   },
   put(options) {
-    return call({ method: 'get', options })
+    return call({ method: 'put', options })
   },
   patch(options) {
-    return call({ method: 'get', options })
+    return call({ method: 'patch', options })
   },
   delete(options) {
-    return call({ method: 'get', options })
+    return call({ method: 'delete', options })
   },
 }
