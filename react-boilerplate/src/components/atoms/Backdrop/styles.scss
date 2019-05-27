@@ -10,8 +10,8 @@
   right: 0;
   bottom: 0;
 
-        &.loading {
-          background-color: rgba(255, 255, 255, 0.5);
-        z-index: $loading_backdrop_layer;
+  &.loading {
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: $loading_backdrop_layer;
   }
 }
