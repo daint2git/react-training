@@ -10,7 +10,7 @@
   "author": "nguyen.tran.dai@sun-asterisk.com",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config configs/webpack/webpack.dev.js",
-    "prod": "node server",
+    "prod": "yarn build && yarn node server",
     "build": "yarn build:clean && cross-env NODE_ENV=production webpack --config configs/webpack/webpack.prod.js --progress",
     "build:clean": "rimraf ./build"
   },
@@ -21,6 +21,7 @@
     "@babel/polyfill": "7.4.3",
     "@hot-loader/react-dom": "16.8.6",
     "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "common-tags": "^1.8.0",
     "compression": "^1.7.4",
@@ -41,7 +42,9 @@
     "react-i18next": "^10.10.0",
     "react-redux": "7.0.2",
     "react-router-dom": "5.0.0",
-    "redux": "4.0.1"
+    "reactstrap": "^8.0.0",
+    "redux": "4.0.1",
+    "simple-storage": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",
@@ -81,6 +84,9 @@
     "rimraf": "^2.6.3",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "stylelint": "^10.0.1",
+    "stylelint-config-recommended-scss": "^3.3.0",
+    "stylelint-scss": "^3.6.1",
     "terser-webpack-plugin": "^1.2.4",
     "url-loader": "^1.1.2",
     "webpack": "4.30.0",

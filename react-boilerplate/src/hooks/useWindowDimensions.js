@@ -1,12 +1,12 @@
 import { useState, useCallback, useEffect } from 'react'
 
-const INITIAL_DIMENSIONS = () => ({
+const initializeDimensions = () => ({
   windowHeight: undefined,
   windowWidth: undefined,
 })
 
 function useWindowDimensions() {
-  const [dimensions, setDimensions] = useState(() => INITIAL_DIMENSIONS())
+  const [dimensions, setDimensions] = useState(() => initializeDimensions())
 
   const resize = useCallback(() => {
     setDimensions({

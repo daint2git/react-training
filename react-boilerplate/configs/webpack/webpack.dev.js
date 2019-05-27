@@ -16,6 +16,12 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        // Preprocess 3rd party .css files located in node_modules
+        test: /\.css$/,
+        include: /node_modules/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.s(a|c)ss$/,
         use: [
           'style-loader',

@@ -1,5 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
+import { simpleLocalStorage } from 'simple-storage'
 
 import en from 'translations/en'
 import ja from 'translations/ja'
@@ -11,7 +12,7 @@ i18n
       en: { translation: en },
       ja: { translation: ja },
     },
-    lng: 'ja',
+    lng: simpleLocalStorage.getItem('language') || 'ja',
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default

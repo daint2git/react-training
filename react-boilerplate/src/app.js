@@ -7,6 +7,7 @@ import configureStore from 'redux/configureStore'
 import history from 'utils/history'
 import App from 'pages/App'
 
+import 'bootstrap/dist/css/bootstrap.css'
 import 'sass/app.scss'
 import './i18n'
 

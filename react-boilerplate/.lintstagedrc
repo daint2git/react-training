@@ -2,5 +2,9 @@
   "*.js": [
     "eslint --fix",
     "git add --force"
+  ],
+  "src/**/*.scss": [
+    "stylelint --fix",
+    "git add --force"
   ]
 }
