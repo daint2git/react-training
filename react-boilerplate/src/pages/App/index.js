@@ -9,7 +9,9 @@ import withDynamicImport from 'hocs/withDynamicImport'
 
 const Home = withDynamicImport(() => import('../Home'))
 const About = withDynamicImport(() => import('../About'))
-const Login = withDynamicImport(() => import('../Login'))
+const Login = withDynamicImport(() => slowImport(import('../Login'), 1000), {
+  fallback: <Loading />,
+})
 const NotFound = withDynamicImport(() => slowImport(import('../NotFound'), 1000), {
   fallback: <Loading />,
 })
