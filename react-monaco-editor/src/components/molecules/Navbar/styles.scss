@@ -1,0 +1,30 @@
+@import 'sass/variables';
+
+.root {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+
+  .list {
+    display: flex;
+    list-style: none;
+    padding: 20px;
+
+
+    .item {
+      font-size: $fs_x_large;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .activeClassName {
+    color: red;
+  }
+
+  .dropdown {
+    margin-right: 100px;
+  }
+}

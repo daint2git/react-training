@@ -1,0 +1,11 @@
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
