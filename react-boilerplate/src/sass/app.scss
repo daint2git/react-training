@@ -1,16 +1,13 @@
-@import 'reset';
 @import './colors';
 @import './variables';
 
 :global {
   html {
     width: 100%;
-    font-size: $fs_html_base;
   }
 
   body {
     width: 100%;
-    font-size: $fs_base_large;
     font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   }
 

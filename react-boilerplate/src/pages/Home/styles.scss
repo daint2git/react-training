@@ -34,3 +34,11 @@
     transform: rotate(360deg);
   }
 }
+
+.react-select-test {
+  background-color: red;
+
+  &__control {
+    font-size: 30px;
+  }
+}
