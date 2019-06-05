@@ -19,7 +19,7 @@ module.exports = {
         use: 'file-loader',
       },
       {
-        test: /\.(jpe?g|jpg|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         use: [
           {
             loader: 'url-loader',
@@ -30,6 +30,25 @@ module.exports = {
           },
           'img-loader',
         ],
+      },
+
+      // {
+      //   test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+      //   issuer: {
+      //     test: /\.js?$/,
+      //   },
+      //   use: [
+      //     'babel-loader',
+      //     {
+      //       loader: '@svgr/webpack',
+      //       options: { babel: false },
+      //     },
+      //     // 'url-loader',
+      //   ],
+      // },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },

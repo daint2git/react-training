@@ -1,11 +1,11 @@
 import React from 'react'
 import classnames from 'classnames/bind'
-// import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Button } from 'reactstrap'
 import Select from 'react-select'
 
-// import reactLogo from 'svgs/react-logo.svg'
-// import reduxLogo from 'svgs/redux-logo.svg'
+import reactLogo from 'svgs/react-logo.svg'
+import reduxLogo from 'svgs/redux-logo.svg'
 
 import styles from './styles.scss'
 
@@ -42,17 +42,17 @@ class SelectDemo extends React.Component {
 }
 
 const Home = () => {
-  // const { t } = useTranslation()
+  const { t } = useTranslation()
 
   return (
-    // <div className={cx('root')}>
-    //   <div className={cx('header')}>
-    //     <h1 className={cx('title')}>{t('title')}</h1>
-    //     <img className={cx('logo')} src={reactLogo} alt="react-logo" />
-    //     <img className={cx('logo')} src={reduxLogo} alt="redux-logo" />
-    //   </div>
-    // </div>
     <>
+      <div className={cx('root')}>
+        <div className={cx('header')}>
+          <h1 className={cx('title')}>{t('title')}</h1>
+          <img className={cx('logo')} src={reactLogo} alt="react-logo" />
+          <img className={cx('logo')} src={reduxLogo} alt="redux-logo" />
+        </div>
+      </div>
       <div className="container">
         <Button color="primary">primary</Button> <Button color="secondary">secondary</Button>{' '}
         <Button color="success">success</Button> <Button color="info">info</Button>{' '}
