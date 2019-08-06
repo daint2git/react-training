@@ -47,7 +47,7 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: buildPath,
-    port: 3000,
+    port: 3001,
     compress: true,
     open: true,
     historyApiFallback: true,
@@ -58,7 +58,7 @@ module.exports = merge(common, {
       favicon: faviconPath,
     }),
     new BundleAnalyzerPlugin({
-      analyzerPort: 8888,
+      analyzerPort: 8889,
       openAnalyzer: false,
     }),
   ],

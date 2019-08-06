@@ -79,7 +79,8 @@ class CodeEditor extends React.Component {
         <hr />
         <MonacoEditor
           ref={this.abc}
-          height="500"
+          height="100%"
+          width="100%"
           language="javascript"
           value={code}
           options={options}

@@ -1,0 +1,22 @@
+.child {
+  font-size: 30px;
+}
+
+.my-class-enter {
+  color: red;
+  opacity: 0;
+}
+.my-class-enter-active {
+  color: green;
+  opacity: 1;
+  transition: all 1000ms;
+}
+.my-class-exit {
+  color: yellow;
+  opacity: 1;
+}
+.my-class-exit-active {
+  color: blue;
+  opacity: 0;
+  transition: all 1000ms;
+}

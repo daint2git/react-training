@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 100vh;
+}
+.todo-list {
+  width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.remove-btn {
+  margin-right: 0.5rem;
+}
+
+.item {
+  padding: 1rem;
+  font-size: 20px;
+  border: 1px solid aqua;
+}
+
+.item-css-transition-enter {
+  opacity: 0;
+}
+
+.item-css-transition-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.item-css-transition-exit {
+  opacity: 1;
+}
+
+.item-css-transition-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}

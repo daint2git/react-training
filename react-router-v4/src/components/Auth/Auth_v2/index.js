@@ -14,7 +14,14 @@ const styles = {
 
 const Home = () => <h2 style={styles}>Home</h2>
 
-const Products = () => <h2 style={styles}>Products</h2>
+const ProductDetail = ({ match }) => <h2 style={styles}>ProductDetail {match.params.id}</h2>
+
+const Products = ({ match }) => (
+  <>
+    <h2 style={styles}>Products</h2>
+    <Route path={`${match.path}/:id`} component={ProductDetail} />
+  </>
+)
 
 const About = () => <h2 style={styles}>About</h2>
 

@@ -55,8 +55,17 @@ function Public() {
   return <h3>Public</h3>
 }
 
-function Protected() {
-  return <h3>Protected</h3>
+function Protected({ match }) {
+  return (
+    <>
+      <h3>Protected</h3>
+      <Route path={`${match.path}/:id`} component={ProtectedDetail} />
+    </>
+  )
+}
+
+function ProtectedDetail() {
+  return <h3>ProtectedDetail</h3>
 }
 
 class Login extends React.Component {
