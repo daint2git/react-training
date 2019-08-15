@@ -1,4 +1,4 @@
-import React, { ReactElement, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 interface Props {
   initialCount: number
@@ -6,16 +6,21 @@ interface Props {
   check?: boolean
 }
 
-const Counter = ({ initialCount, onMessageShow }: Props): ReactElement => {
+const Counter: React.FC<Props> = ({
+  initialCount,
+  onMessageShow,
+  children,
+  ...rest
+}): React.ReactElement => {
   const [count, setCount] = useState(initialCount)
 
   useEffect((): void => {
     onMessageShow(count)
-    console.log(initialCount)
+    console.log(initialCount) // eslint-disable-line
   })
 
   return (
-    <div>
+    <div {...rest}>
       <h2>Count {count}</h2>
       <button
         type="button"
@@ -28,6 +33,7 @@ const Counter = ({ initialCount, onMessageShow }: Props): ReactElement => {
       <button type="button" onClick={(): void => setCount(count - 1)}>
         -
       </button>
+      {children}
     </div>
   )
 }
@@ -36,12 +42,16 @@ interface ParentCounterProps {
   initialCount: number
 }
 
-const ParentCounter = ({ initialCount }: ParentCounterProps): ReactElement => {
+const ParentCounter = ({ initialCount }: ParentCounterProps): JSX.Element => {
   const handleMessageShow = (count: number): void => {
-    console.log(`This is ${count}`)
+    console.log(`This is ${count}`) // eslint-disable-line
   }
 
-  return <Counter initialCount={initialCount} onMessageShow={handleMessageShow} />
+  return (
+    <Counter initialCount={initialCount} onMessageShow={handleMessageShow}>
+      <div>This is Children</div>
+    </Counter>
+  )
 }
 
 export default ParentCounter

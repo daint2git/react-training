@@ -1,10 +1,9 @@
-const fs = require('fs')
-const path = require('path')
-
-const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'))
-
 module.exports = {
   parser: '@typescript-eslint/parser',
+
+  parserOptions: {
+    project: './tsconfig.json',
+  },
 
   extends: [
     'airbnb-typescript',
@@ -21,11 +20,6 @@ module.exports = {
     es6: true,
   },
 
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-  },
-
   settings: {
     'import/resolver': {
       webpack: {
@@ -35,7 +29,7 @@ module.exports = {
   },
 
   rules: {
-    'prettier/prettier': [1, prettierOptions],
+    'prettier/prettier': 1,
 
     'react/destructuring-assignment': 1,
     'react/forbid-prop-types': 0,
@@ -75,6 +69,7 @@ module.exports = {
     'react/no-unescaped-entities': 0,
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 2,
+    'react/prop-types': 0,
 
     'jsx-a11y/mouse-events-have-key-events': 2,
     'jsx-a11y/label-has-associated-control': [
