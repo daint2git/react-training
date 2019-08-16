@@ -1,10 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
 
-  parserOptions: {
-    project: './tsconfig.json',
-  },
-
   extends: [
     'airbnb-typescript',
     'plugin:prettier/recommended',
@@ -13,6 +9,12 @@ module.exports = {
   ],
 
   plugins: ['import', 'react-hooks', 'jsx-a11y'],
+
+  parserOptions: {
+    project: './tsconfig.json',
+    ecmaVersion: 6,
+    sourceType: 'module',
+  },
 
   env: {
     browser: true,
@@ -23,7 +25,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: './webpack.config.js',
+        config: './configs/webpack.config.js',
       },
     },
   },

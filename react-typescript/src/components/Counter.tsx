@@ -6,12 +6,7 @@ interface Props {
   check?: boolean
 }
 
-const Counter: React.FC<Props> = ({
-  initialCount,
-  onMessageShow,
-  children,
-  ...rest
-}): React.ReactElement => {
+const Counter: React.FC<Props> = ({ initialCount, onMessageShow, children, ...rest }) => {
   const [count, setCount] = useState(initialCount)
 
   useEffect((): void => {
@@ -42,7 +37,8 @@ interface ParentCounterProps {
   initialCount: number
 }
 
-const ParentCounter = ({ initialCount }: ParentCounterProps): JSX.Element => {
+// const ParentCounter = ({ initialCount }: ParentCounterProps): JSX.Element => {
+const ParentCounter = ({ initialCount }: ParentCounterProps): React.ReactElement => {
   const handleMessageShow = (count: number): void => {
     console.log(`This is ${count}`) // eslint-disable-line
   }
