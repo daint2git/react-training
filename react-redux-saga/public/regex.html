@@ -142,9 +142,9 @@
     console.log('123456789'.match(/(\d)+/))
 
     /* Flag */
-    // g: kiểm tra điều kiện nhiều lần
-    // i: không phân biệt hoa thường
-    // m: cho phép kiểm tra xuống dòng
+    // g: Tìm kiếm toàn cục
+    // i: Tìm kiếm không phân biệt hoa thường
+    // m: Tìm đa dòng
     // u: bật hỗ trợ unicode
     console.log(/hey/ig.test('HEy')) //✅
     console.log(new RegExp('hey', 'ig').test('HEy')) //✅
