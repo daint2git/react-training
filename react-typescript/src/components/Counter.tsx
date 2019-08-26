@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { unparse } from 'papaparse'
 
 interface Props {
   initialCount: number
@@ -8,6 +9,13 @@ interface Props {
 
 const Counter: React.FC<Props> = ({ initialCount, onMessageShow, children, ...rest }) => {
   const [count, setCount] = useState(initialCount)
+
+  const csv = unparse({
+    fields: ['Column 1', 'Column 2'],
+    data: [['foo', 'bar'], ['abc', 'def']],
+  })
+
+  console.log(csv) // eslint-disable-line
 
   useEffect((): void => {
     onMessageShow(count)

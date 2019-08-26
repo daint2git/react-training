@@ -2,9 +2,9 @@ import React from 'react'
 
 import Todo from 'models/Todo'
 
-interface Props {
+export interface Props {
   todos: Todo[]
-  onTodoClick: (todoId: number) => void
+  onTodoClick: (value: number) => void
 }
 
 const TodosList: React.FC<Props> = ({ todos, onTodoClick }) => (

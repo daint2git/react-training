@@ -1,8 +1,7 @@
 import { createStore } from 'redux'
 
-import { State, reducer } from 'reducers'
-import { Action } from 'actions/todos'
+import { reducer } from 'reducers'
 
-const store = createStore<State, Action, any, any>(reducer)
+const store = createStore(reducer)
 
 export default store

@@ -13,15 +13,18 @@ export enum ActionTypes {
  */
 export interface AddTodoAction {
   type: ActionTypes.ADD_TODO
-  payload: {
-    todo: Todo
-  }
+  payload: { todo: Todo }
 }
 
 export interface ToggleTodoAction {
   type: ActionTypes.TOGGLE_TODO
   payload: { todoId: number }
 }
+
+/**
+ * Actions
+ */
+export type Action = AddTodoAction | ToggleTodoAction
 
 /**
  * Action creators
@@ -42,13 +45,6 @@ export function addTodo(name: string): AddTodoAction {
 export function toggleTodo(todoId: number): ToggleTodoAction {
   return {
     type: ActionTypes.TOGGLE_TODO,
-    payload: {
-      todoId,
-    },
+    payload: { todoId },
   }
 }
-
-/**
- * Action type
- */
-export type Action = AddTodoAction | ToggleTodoAction

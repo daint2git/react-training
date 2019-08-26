@@ -2,17 +2,17 @@ import { connect } from 'react-redux'
 
 import { State } from 'reducers'
 import { toggleTodo } from 'actions/todos'
-import TodosList from 'components/TodosList'
+import TodosList, { Props as TodosListProps } from 'components/TodosList'
 
-const mapStateToProps = (state: State): Object => ({
+const mapStateToProps = (state: State): Pick<TodosListProps, 'todos'> => ({
   todos: state.todos.todos,
 })
 
-const mapDispatchToProps: Object = {
+const mapDispatchToProps: Pick<TodosListProps, 'onTodoClick'> = {
   onTodoClick: toggleTodo,
 }
 
-export default connect<any, any, any>(
+export default connect(
   mapStateToProps,
   mapDispatchToProps,
 )(TodosList)

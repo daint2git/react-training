@@ -1,13 +1,13 @@
 import { connect } from 'react-redux'
 
 import { addTodo } from 'actions/todos'
-import AddTodoForm from 'components/AddTodoForm'
+import AddTodoForm, { Props as AddTodoFormProps } from 'components/AddTodoForm'
 
-const mapDispatchToProps: Object = {
+const mapDispatchToProps: Pick<AddTodoFormProps, 'onSubmit'> = {
   onSubmit: addTodo,
 }
 
-export default connect<any, any, any>(
+export default connect(
   null,
   mapDispatchToProps,
 )(AddTodoForm)

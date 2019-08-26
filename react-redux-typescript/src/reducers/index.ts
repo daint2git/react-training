@@ -1,18 +1,26 @@
 import { combineReducers } from 'redux'
 
-import * as todos from './todos'
+import { Action as TodosAction } from 'actions/todos'
+
+import {
+  State as TodosState,
+  initialState as TodosInitialState,
+  reducer as TodosReducer,
+} from './todos'
 
 // root state definition
 export interface State {
-  todos: todos.State
+  todos: TodosState
 }
 
 // root initialState
 export const initialState: State = {
-  todos: todos.initialState,
+  todos: TodosInitialState,
 }
 
+type Action = TodosAction
+
 // root reducer
-export const reducer = combineReducers<State>({
-  todos: todos.reducer,
+export const reducer = combineReducers<State, Action>({
+  todos: TodosReducer,
 })

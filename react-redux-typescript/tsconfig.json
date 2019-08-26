@@ -4,11 +4,14 @@
     "paths": {
       "*": ["src/*"]
     },
-    "outDir": "./build",
+    "outDir": "build",
     "sourceMap": true,
-    "noImplicitAny": true,
+    "strict": true,
     "noImplicitReturns": true,
-    "noUnusedLocals": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
     "target": "es6",
     "module": "es6",
     "lib": ["es6", "dom"],
@@ -19,6 +22,6 @@
     "allowJs": true,
     "checkJs": true
   },
-  "include": ["configs", "src"],
+  "include": ["src", "configs"],
   "exclude": ["node_modules", "build"]
 }
