@@ -4,21 +4,22 @@
     "paths": {
       "*": ["src/*", "typings/*"]
     },
-    "outDir": "./build",
+    "outDir": "build",
     "sourceMap": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": false,
-    "target": "es6",
-    "module": "es6",
-    "lib": ["es6", "dom"],
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
     "jsx": "preserve",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "allowJs": true,
-    "checkJs": true
+    "allowJs": true
+    // "checkJs": true
   },
-  "include": ["configs", "src"],
+  // "include": ["src/**/*.{ts,tsx}"],
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "build"]
 }

@@ -1,20 +1,29 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  // root: true,
+
+  // parser: '@typescript-eslint/parser',
+
+  parser: 'babel-eslint',
+
+  parserOptions: {
+    // project: './tsconfig.json',
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
 
   extends: [
-    'airbnb-typescript',
+    'eslint:recommended',
+    'plugin:react/recommended',
+    // 'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'prettier/react',
-    'prettier/@typescript-eslint',
+    // 'prettier/@typescript-eslint',
   ],
 
   plugins: ['import', 'react-hooks', 'jsx-a11y'],
-
-  parserOptions: {
-    project: './tsconfig.json',
-    ecmaVersion: 6,
-    sourceType: 'module',
-  },
 
   env: {
     browser: true,
@@ -27,6 +36,9 @@ module.exports = {
       webpack: {
         config: './configs/webpack.config.js',
       },
+    },
+    react: {
+      version: 'detect',
     },
   },
 
@@ -54,7 +66,7 @@ module.exports = {
     'react/jsx-filename-extension': [
       1,
       {
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
       },
     ],
     'react/no-string-refs': 2,
@@ -116,14 +128,6 @@ module.exports = {
     'prefer-rest-params': 2,
     'prefer-const': 2,
 
-    '@typescript-eslint/no-unused-vars': [
-      2,
-      {
-        argsIgnorePattern: '^_',
-      },
-    ],
-    '@typescript-eslint/array-type': 2,
-    '@typescript-eslint/explicit-function-return-type': 2,
     'no-var': 2,
     'no-use-before-define': [2, 'nofunc'],
     'no-alert': 1,
@@ -147,4 +151,22 @@ module.exports = {
     ],
     'no-shadow': 0,
   },
+  overrides: [
+    {
+      // files: ['src/**/*.{ts,tsx}'],
+      files: ['src/**/*.ts', 'src/**/*.tsx'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './tsconfig.json',
+        ecmaVersion: 2018,
+        sourceType: 'module',
+      },
+      extends: ['plugin:@typescript-eslint/recommended', 'prettier/@typescript-eslint'],
+      rules: {
+        '@typescript-eslint/no-unused-vars': [2, { argsIgnorePattern: '^_' }],
+        '@typescript-eslint/array-type': 2,
+        '@typescript-eslint/explicit-function-return-type': 2,
+      },
+    },
+  ],
 }

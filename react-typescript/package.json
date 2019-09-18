@@ -1,6 +1,7 @@
 {
   "name": "react-typescript",
   "version": "1.0.0",
+  "typings": "./typings/index.d.ts",
   "dependencies": {
     "papaparse": "^5.0.2",
     "react": "^16.9.0",
@@ -11,14 +12,13 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/html-webpack-plugin": "^3.2.1",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
     "@typescript-eslint/eslint-plugin": "^2.0.0",
     "@typescript-eslint/parser": "^2.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "eslint": "^6.1.0",
-    "eslint-config-airbnb-typescript": "^4.0.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.18.2",
@@ -34,6 +34,7 @@
     "webpack-dev-server": "^3.8.0"
   },
   "scripts": {
-    "start": "webpack-dev-server --config configs/webpack.config --hot"
+    "start": "webpack-dev-server --config configs/webpack.config --hot",
+    "lint": "eslint --ext ts,tsx,js,jsx src --fix"
   }
 }

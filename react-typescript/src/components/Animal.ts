@@ -5,13 +5,13 @@ class Animal {
 
   private hasBite?: boolean
 
-  constructor(name: string, numberOfLegs: number, hasBite: boolean = false) {
+  constructor(name: string, numberOfLegs: number, hasBite = false) {
     this.name = name
     this.numberOfLegs = numberOfLegs
     this.hasBite = hasBite
   }
 
-  move(distanceInMeters: number = 0): void {
+  move(distanceInMeters = 0): void {
     console.log(`${this.name} moved ${distanceInMeters}m.`) // eslint-disable-line
   }
 }
