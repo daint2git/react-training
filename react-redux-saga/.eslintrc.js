@@ -121,7 +121,7 @@ module.exports = {
     ],
     'no-use-before-define': [2, 'nofunc'],
     'no-alert': 1,
-    'no-console': 1,
+    'no-console': 0,
     'no-param-reassign': 0,
     'no-unexpected-multiline': 2,
     'no-undef-init': 2,

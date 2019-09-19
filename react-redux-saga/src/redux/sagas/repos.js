@@ -16,8 +16,6 @@ function* fetchReposWorker() {
   }
 }
 
-function* reposSaga() {
+export default function*() {
   yield all([takeLatest(FETCH_REPOS, fetchReposWorker)])
 }
-
-export default reposSaga
