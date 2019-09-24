@@ -14,7 +14,7 @@ export const incrementAsync = () => ({
   type: INCREMENT_ASYNC,
 })
 
-const initialState = {
+export const initialState = {
   count: 0,
 }
 

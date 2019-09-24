@@ -1,17 +1,22 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Title from 'components/Title'
-import Content from 'components/Content'
-import Loading from 'components/Loading'
-import Counter from 'components/Counter'
+import Nav from '../Nav'
+import Title from '../Title'
+import Repos from '../Repos'
+import Loading from '../Loading'
+import Counter from '../Counter'
 
 const Root = () => (
-  <div>
-    <Title />
-    <Content />
+  <BrowserRouter>
+    <Nav />
     <Loading />
-    <Counter />
-  </div>
+    <Switch>
+      <Route exact path="/" component={Title} />
+      <Route exact path="/repos" component={Repos} />
+      <Route exact path="/counter" component={Counter} />
+    </Switch>
+  </BrowserRouter>
 )
 
 export default Root

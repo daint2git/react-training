@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 
 const prettierOptions = JSON.parse(fs.readFileSync(path.resolve(__dirname, '.prettierrc'), 'utf8'))
+const srcPath = path.resolve(__dirname, 'src')
 
 module.exports = {
   parser: 'babel-eslint',
@@ -23,8 +24,17 @@ module.exports = {
 
   settings: {
     'import/resolver': {
+      //   webpack: {
+      //     config: './webpack.config.js',
+      //   },
+      // },
       webpack: {
-        config: './webpack.config.js',
+        config: {
+          resolve: {
+            modules: [srcPath, 'node_modules'],
+            extensions: ['.js', '.scss', '.sass'],
+          },
+        },
       },
     },
   },
