@@ -6,7 +6,7 @@ module.exports = {
       '@babel/preset-env',
       {
         modules: false,
-        loose: loose,
+        loose,
       },
     ],
     [
@@ -20,13 +20,13 @@ module.exports = {
     [
       '@babel/plugin-proposal-class-properties',
       {
-        loose: loose,
+        loose,
       },
     ],
     [
       '@babel/plugin-proposal-object-rest-spread',
       {
-        loose: loose,
+        loose,
       },
     ],
     '@babel/plugin-syntax-dynamic-import',
