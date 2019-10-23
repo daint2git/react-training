@@ -5,6 +5,7 @@ import EffectHook from './EffectHook'
 import MemoHook from './MemoHook'
 import RefHook from './RefHook'
 import StateHook from './StateHook'
+import LayoutEffect from './LayoutEffect'
 
 export default () => (
   <>
@@ -14,5 +15,6 @@ export default () => (
     <MemoHook />
     <RefHook />
     <StateHook />
+    <LayoutEffect />
   </>
 )

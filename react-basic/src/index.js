@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Lazy from './Lazy'
+import Hooks from './Hooks'
 
 const Root = () => (
   <>
-    <Lazy />
+    <Hooks />
   </>
 )
 
