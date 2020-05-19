@@ -2,7 +2,7 @@ import { createStore, compose, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { logger } from 'redux-logger'
 
-import rootReducer from './reducers'
+import createReducer from './reducers'
 import rootSaga from './sagas'
 
 export default function configureStore(initialState = {}) {
@@ -21,9 +21,14 @@ export default function configureStore(initialState = {}) {
       : compose
   /* eslint-enable */
 
-  const store = createStore(rootReducer, initialState, composeEnhancers(...enhancers))
+  const store = createStore(createReducer(), initialState, composeEnhancers(...enhancers))
 
-  sagaMiddleware.run(rootSaga)
+  // Extensions
+  store.runSaga = sagaMiddleware.run
+  store.injectedReducers = {} // Reducer registry
+  store.injectedSagas = {} // Saga registry
+
+  // sagaMiddleware.run(rootSaga)
 
   return store
 }

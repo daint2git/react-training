@@ -15,7 +15,7 @@ export const fetchReposFail = () => ({
   type: FETCH_REPOS_FAIL,
 })
 
-const initialState = {
+export const initialState = {
   list: [],
 }
 
