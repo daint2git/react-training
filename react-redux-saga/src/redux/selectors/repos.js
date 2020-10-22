@@ -1,13 +1,12 @@
 import { createSelector } from 'reselect'
 
-import { initialState } from '../reducers/repos'
+import { initialState } from 'redux/reducers/repos'
 
 const reposSelector = state => state.repos || initialState
 
-const listSelector = () =>
-  createSelector(
-    reposSelector,
-    state => state.list,
-  )
+const reposListSelector = createSelector(
+  reposSelector,
+  state => state.list,
+)
 
-export { reposSelector, listSelector }
+export { reposSelector, reposListSelector }
