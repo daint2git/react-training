@@ -27,7 +27,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime-corejs2": "^7.4.4",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "i18next": "^15.1.0",
     "lodash": "^4.17.19",
     "mobx": "^5.9.4",
