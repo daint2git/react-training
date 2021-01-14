@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.4.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "formik": "^1.5.8",
     "lodash-es": "^4.17.15",
     "prop-types": "^15.7.2",
