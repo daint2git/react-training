@@ -1,0 +1,18 @@
+.font-link {
+  font-family: "Roboto", sans-serif;
+}
+
+.font-loader {
+  font-family: "Droid Sans";
+}
+
+@font-face {
+  font-family: "GoldmanBold";
+  src: local("GoldmanBold"),
+    url("./fonts/Goldman/Goldman-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+.font-face-gm {
+  font-family: "GoldmanBold";
+}
