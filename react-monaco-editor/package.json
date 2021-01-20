@@ -32,7 +32,7 @@
     "history": "^4.9.0",
     "hoist-non-react-statics": "^3.3.0",
     "i18next": "^15.1.2",
-    "immer": "^3.1.2",
+    "immer": "^8.0.1",
     "is-promise": "^2.1.0",
     "lodash-es": "^4.17.11",
     "monaco-editor": "^0.17.0",
