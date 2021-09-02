@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@babel/runtime-corejs2": "^7.5.5",
-    "immer": "^3.2.0",
+    "immer": "^9.0.6",
     "kuker-emitters": "^6.7.4",
     "react": "^16.9.0",
     "react-dom": "npm:@hot-loader/react-dom",
