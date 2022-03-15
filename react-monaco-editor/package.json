@@ -34,7 +34,7 @@
     "i18next": "^15.1.2",
     "immer": "^3.1.2",
     "is-promise": "^2.1.0",
-    "lodash-es": "^4.17.11",
+    "lodash-es": "^4.17.21",
     "monaco-editor": "^0.17.0",
     "prop-types": "15.7.2",
     "react": "16.8.6",
